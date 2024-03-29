@@ -170,7 +170,7 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="1-MatrixCalculator\1-MaC-File-02-Menu.cpp">
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-03-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -244,6 +244,9 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-04-EnterMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-06-ClearMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-05-PrintMatrix.cpp" />
     <ClCompile Include="2-FractionCalculator\2-FrC-File-02-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -618,6 +621,7 @@
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />
     <ClInclude Include="1-MatrixCalculator\1-MaC-File-01-Header.h" />
+    <ClInclude Include="1-MatrixCalculator\1-MaC-File-02-Matrix.h" />
     <ClInclude Include="2-FractionCalculator\2-FrC-File-01-Header.h" />
     <ClInclude Include="3-FunctionCalculator\3-FuC-File-01-Header.h" />
     <ClInclude Include="4-CombinatoricsCalculator\4-CoC-File-01-Header.h" />
