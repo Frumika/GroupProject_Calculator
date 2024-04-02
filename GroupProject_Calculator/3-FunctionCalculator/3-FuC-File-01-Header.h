@@ -13,3 +13,4 @@ double SinFunc(double x, double a, double b, double c, double d);
 double CosFunc(double x, double a, double b, double c, double d);
 void runSecondFuncMenu(function<double(double)> ChosenFunc);
 double runDefIntegral(function<double (double)> ChosenFunc);
+void runFuncRootCalc(function<double(double)> ChosenFunc);

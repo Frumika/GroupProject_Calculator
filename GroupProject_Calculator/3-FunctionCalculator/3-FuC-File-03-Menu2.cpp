@@ -47,6 +47,7 @@ void runSecondFuncMenu(function<double(double)> ChosenFunc)
     case '3':
         {
             system("cls");
+            runFuncRootCalc(ChosenFunc);
         }
         break;
     case '4':

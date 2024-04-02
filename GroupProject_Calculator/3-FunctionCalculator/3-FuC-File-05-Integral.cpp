@@ -18,10 +18,13 @@ double IntegralCalc(double st, double en, int n, function<double (double)> Chose
 
 double runDefIntegral(function<double (double)> ChosenFunc)
 {
-    double st, en;
+    double st = 1, en = 0;
     int n = 1000;
     
-    cout << "Введите границы отрезка: "; cin >> st >> en;
+    do
+    {
+        cout << "Введите границы отрезка: "; cin >> st >> en;
+    } while (st > en);
 
     double e = 0.0001;
     int k = 10;
