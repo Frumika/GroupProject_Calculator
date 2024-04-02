@@ -247,6 +247,16 @@
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-04-EnterMatrix.cpp" />
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-06-ClearMatrix.cpp" />
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-05-PrintMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-07-CopyMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-08-Sum&amp;SubMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-09-MultiplicationMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-10-TranspositionMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-11-StepMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-12-FindDeterminant.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-13-CreateMinor.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-14-FindAlgebraicComplement.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-15-FindInverseMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-99-Test.cpp" />
     <ClCompile Include="2-FractionCalculator\2-FrC-File-02-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
