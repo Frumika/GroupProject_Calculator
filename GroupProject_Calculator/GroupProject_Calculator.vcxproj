@@ -170,6 +170,7 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-17-RunSubMatrix.cpp" />
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-03-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -256,7 +257,11 @@
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-13-CreateMinor.cpp" />
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-14-FindAlgebraicComplement.cpp" />
     <ClCompile Include="1-MatrixCalculator\1-MaC-File-15-FindInverseMatrix.cpp" />
-    <ClCompile Include="1-MatrixCalculator\1-MaC-File-99-Test.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-16-RunSumMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-18-RunMultiplicationMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-19-RunTranspositionMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-20-RunDeterminantMatrix.cpp" />
+    <ClCompile Include="1-MatrixCalculator\1-MaC-File-21-RunInverseMatrix.cpp" />
     <ClCompile Include="2-FractionCalculator\2-FrC-File-02-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>

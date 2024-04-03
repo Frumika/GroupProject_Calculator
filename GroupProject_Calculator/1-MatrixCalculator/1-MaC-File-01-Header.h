@@ -4,32 +4,41 @@
 
 void displayMatrixMenu();
 
-Matrix* enterMatrix(int, int);
+Matrix* enterMatrix(int n, int m);
 
-void printMatrix(Matrix*);
+void printMatrix(Matrix* matrixA);
 
-void clearMatrix(Matrix*);
+void clearMatrix(Matrix* matrixA);
 
 Matrix* copyMatrix(Matrix* matrixA);
 
-Matrix* sumMatrix(Matrix*, Matrix*);
-Matrix* subtractMatrix(Matrix*, Matrix*);
-Matrix* sumMatrix(Matrix*, double*);
+void sumMatrix(Matrix* matrixA, Matrix* matrixB);
+void sumMatrix(Matrix* matrixA, double* number);
+void subtractMatrix(Matrix* matrixA, Matrix* matrixB);
 
-Matrix* multiplicationMatrix(Matrix*, Matrix*);
-Matrix* multiplicationMatrix(Matrix*, double*);
+Matrix* multiplicationMatrix(Matrix* matrixA, Matrix* matrixB);
+void multiplicationMatrix(Matrix* matrixA, double* number);
 
-Matrix* transpositionMatrix(Matrix*);
+Matrix* transpositionMatrix(Matrix* matrixA);
 
-Matrix* createStepMatrix(Matrix*);
+Matrix* createStepMatrix(Matrix* matrixA);
 
-double findDeterminant(Matrix*);
+double* findDeterminant(Matrix* matrixA);
 
-Matrix* createMinor(Matrix*, int*, int*);
+Matrix* createMinor(Matrix* matrixA, int* iA, int* jA);
 
-double findAlgebraicComplement(Matrix*, int*, int*);
+double findAlgebraicComplement(Matrix* matrixA, int* iA, int* jA);
 
-Matrix* findInverseMatrix(Matrix*);
+Matrix* findInverseMatrix(Matrix* matrixA, double* determinant);
 
+void runSumMatrix(bool key);
 
-void runTest();
+void runSubMatrix();
+
+void runMultiplicationMatrix(bool key);
+
+void runTranspositionMatrix();
+
+void runDeterminantMatrix();
+
+void runInverseMatrix();

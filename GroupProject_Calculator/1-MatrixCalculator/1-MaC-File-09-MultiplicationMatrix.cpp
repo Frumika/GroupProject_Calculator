@@ -2,7 +2,7 @@
 
 
 /*
- * Функция sumMatrixString принимает 2 указателя на тип Matrix, а так же 2 указателя на тип int
+ * Функция sumMatrixString в качестве аргуметов принимает 2 указателя на матрицы, и 2 указателя - на номер строки и на номер столбца.
  * В первой матрице (matrixA) рассматривается умножаемая строка.
  * Во второй матрице (matrixB) рассматривается умножаемый столбец.
  * Значения i и j являются "координатами" записи полученного числа в новой матрице.
@@ -25,7 +25,7 @@ double sumMatrixString(Matrix* matrixA, Matrix* matrixB, int* i, int* j)
 
 
 /*
- * Функция multiplicationMatrix принимает 2 указателя на тип Matrix.
+ * Функция multiplicationMatrix в качестве аргументов принимает 2 указателя на матрицы (на matrixA и на matrixB).
  * В результате выполнения функции создается новая матрица (matrixC) содержащая в себе результат умножения
  * первой входящей матрицы (matrixA) на вторую входящую матрицу (matrixB).
  * Обе входящих матрицы удаляются.
@@ -55,11 +55,13 @@ Matrix* multiplicationMatrix(Matrix* matrixA, Matrix* matrixB)
 
 
 /*
- * Фунцкция multiplicationMatrix принимает 2 указателя - указатель на тип Matrix и указатель на тип double.
- * В результате выполнения функции все значения передаваемой матрицы (matrixA) умножаются на передаваемое число (number).
- * Функция возвращает указатель на переданнаую ей матрицу.
+ * Фунцкция multiplicationMatrix в качестве аргументов принимает 2 указателя - на матрицу и на число.
+ * В ходе выполнения функции значения входящей матрицы умножаются на входящее число.
+ * В результате выполнения функции видоизменяется входящая матрица таким образом, что она содержит результат умножения.
+ * Входящее число удаляется.
+ * Функция не возвращает значения.
  */
-Matrix* multiplicationMatrix(Matrix* matrixA, double* number)
+void multiplicationMatrix(Matrix* matrixA, double* number)
 {
     for (int i = 0; i < *matrixA->n; i++)
     {
@@ -68,5 +70,5 @@ Matrix* multiplicationMatrix(Matrix* matrixA, double* number)
             matrixA->matrix[i][j] = matrixA->matrix[i][j] * *number;
         }
     }
-    return matrixA;
+    delete number;
 }

@@ -47,54 +47,53 @@ void displayMatrixMenu()
     }
     while (condition == false);
 
+    system("cls");
 
     switch (button) // в зависимости от введенного знчения вызываем функцию 
     {
     case '1':
         {
-            system("cls");
-            runTest();
+            runSumMatrix(0);
         }
         break;
     case '2':
         {
-            system("cls");
+            runSubMatrix();
         }
         break;
     case '3':
         {
-            system("cls");
+            runMultiplicationMatrix(0);
         }
         break;
     case '4':
         {
-            system("cls");
+            runMultiplicationMatrix(1);
         }
         break;
     case '5':
         {
-            system("cls");
+            runSumMatrix(1);
         }
         break;
     case '6':
         {
-            system("cls");
+            runTranspositionMatrix();
         }
         break;
     case '7':
         {
-            system("cls");
+            runDeterminantMatrix();
         }
         break;
     case '8':
         {
-            system("cls");
+            runInverseMatrix();
         }
         break;
 
     default:
         {
-            system("cls");
             runMainMenu();
         }
     }
