@@ -29,6 +29,7 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
     const double pwr1 = pol1->front().first;
     const double pwr2 = pol2->front().first;
     if (pwr1 < pwr2) { cout << "Попробуйте ввести полиномы в другом порядке или выберите другой номер задачи \n\n"; return 0;}
+    if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){cout<<"Напоминаем: операция деления полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
     *rem = new Poly;
     vector<double> cf1 = AllCoef(pol1, pwr1);
@@ -56,6 +57,9 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
 }// деление полиномов
 
 Poly* AddPolynom(Poly* pol1, Poly* pol2) {
+    const double pwr1 = pol1->front().first;
+    const double pwr2 = pol2->front().first;
+    if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){cout<<"Напоминаем: операция сложения полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
     double pwr = max(pol1->front().first, pol2->front().first);
     vector<double> cf1 = AllCoef(pol1, pwr);
@@ -70,6 +74,9 @@ Poly* AddPolynom(Poly* pol1, Poly* pol2) {
 }//сложение полиномов
 
 Poly* SubtPolynom(Poly* pol1, Poly* pol2) {
+    const double pwr1 = pol1->front().first;
+    const double pwr2 = pol2->front().first;
+    if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){cout<<"Напоминаем: операция вычитания полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
     int pwr = max(pol1->front().first, pol2->front().first);
     vector<double> cf1 = AllCoef(pol1, pwr);

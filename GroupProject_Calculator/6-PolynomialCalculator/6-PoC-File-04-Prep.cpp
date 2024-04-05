@@ -15,7 +15,7 @@ Poly* GetPolynom(istream& in) {
         istringstream elm2(str1);
         elm2 >> pwr;
         elm2 >> cft;
-        pol->emplace_back(make_pair(abs(pwr), cft));
+        pol->emplace_back(make_pair(pwr, cft));
     }
     return pol;
 }

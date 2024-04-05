@@ -1,5 +1,5 @@
 ﻿#include"6-PoC-File-01-Header.h"
-#include "C:/Users/sdahu/source/repos/GroupProject_Calculator/GroupProject_Calculator/0-Common/0-Co-File-01-Header.h"
+#include "../0-Common/0-Co-File-01-Header.h"
 void runPolynomialCalculator()
 {
     setlocale(LC_ALL, "Russian");
@@ -14,9 +14,10 @@ void runPolynomialCalculator()
     << "|       Пары чисел разделяются знаком ';'                   |" << endl
     << "|       Например, полином  3*x^2+2 вводится так:  2 3; 0 2  |" << endl
     << "|       Ввод полинома завершается нажатием клавиши Enter    |" << endl
-    << "| >>>Калькулятор работает с положительными целыми степенями |" << endl
+    << "| >>>Калькулятор работает с положительными целыми степенями |"<<endl
+    << "|       для задач: сложение, деление, вычитание полиномов   |" << endl
     << "| >>>Советуем проверять каждый введенный многочлен          |" << endl
-    << "+-----------------------------------------------------------+" << endl;
+    << "|-----------------------------------------------------------|" << endl;
     int t;
     Poly* pol3;
     Poly* pol4;
@@ -28,14 +29,14 @@ void runPolynomialCalculator()
         << "|----------------------------------------------------|" << endl
         << "|             >>> Введите номер задачи: <<<          |" << endl
         << "|----------------------------------------------------|" << endl
-        << "| 1-деление одного многочлена на другой              |" << endl
-        << "| 2-сложение многочленов                             |" << endl
-        << "| 3-вычитание многочленов                            |" << endl
-        << "| 4-перемножение многочленов                         |" << endl
-        << "| 5-умножение многочлена на число                    |" << endl
-        << "| 6-нахождение производной I порядка от многочлена   |" << endl
-        << "| 0- Выйти в главное меню                            |" << endl
-        << "+----------------------------------------------------+" << endl;
+        << "| 1. Деление одного многочлена на другой             |" << endl
+        << "| 2. Сложение многочленов                            |" << endl
+        << "| 3. Вычитание многочленов                           |" << endl
+        << "| 4. Перемножение многочленов                        |" << endl
+        << "| 5. Умножение многочлена на число                   |" << endl
+        << "| 6. Нахождение производной I порядка от многочлена  |" << endl
+        << "| 0. Выйти в главное меню                            |" << endl
+        << "|----------------------------------------------------|" << endl;
         but = _getch();
         
         cond = (but == '1' ||
@@ -64,8 +65,8 @@ void runPolynomialCalculator()
             switch (t)
             {
             case 1:  pol4 = DivPolynom(pol1, pol2, &pol3); if (pol4) { cout << "\nРезультат\n"; PrintPolynom(pol4); } break;
-            case 2: pol4 = AddPolynom(pol1, pol2);  cout << "\nРезультат\n"; PrintPolynom(pol4); break;
-            case 3:  pol4 = SubtPolynom(pol1, pol2);  cout << "\nРезультат\n"; PrintPolynom(pol4); break;
+            case 2: pol4 = AddPolynom(pol1, pol2);   if (pol4) { cout << "\nРезультат\n"; PrintPolynom(pol4); } break;
+            case 3:  pol4 = SubtPolynom(pol1, pol2);  if (pol4) { cout << "\nРезультат\n"; PrintPolynom(pol4); } break;
             case 4: pol4 = MultPolynom(pol1, pol2);  cout << "\nРезультат\n"; PrintPolynom(pol4); break;
             }
         }//считывается 2 полинома
