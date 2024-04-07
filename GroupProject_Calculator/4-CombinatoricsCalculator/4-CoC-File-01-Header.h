@@ -1,12 +1,18 @@
 #pragma once
 
 
-void placementWithRep();  //Для запуска калькулятора размещения с повторениями
+void runCombinatoricsCalculator();  //Основная функция калькулятора комбинаторики
 
-void placementWithoutRep();  //Для запуска калькулятора размещения без повторений
+double factorial(int n);   //Факториал
 
-void combinationWithRep();  //Для запуска калькулятора сочетания с повторениями
+double pow(int n, int m); //Степень
 
-void combinationWithoutRep();  //Для запуска калькулятора сочетания без повторений
+void runPlacementWithRep();  //Для запуска калькулятора размещения с повторениями
 
-void reshuffle();  //Для запуска калькулятора перестановок
+void runPlacementWithoutRep();  //Для запуска калькулятора размещения без повторений
+
+void runCombinationWithRep();  //Для запуска калькулятора сочетания с повторениями
+
+void runCombinationWithoutRep();  //Для запуска калькулятора сочетания без повторений
+
+void runReshuffle();  //Для запуска калькулятора перестановок
