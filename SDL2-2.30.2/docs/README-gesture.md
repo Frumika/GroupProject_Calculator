@@ -1,4 +1,4 @@
-﻿Dollar Gestures
+Dollar Gestures
 ===========================================================================
 SDL provides an implementation of the $1 gesture recognition system. This allows for recording, saving, loading, and performing single stroke gestures.
 

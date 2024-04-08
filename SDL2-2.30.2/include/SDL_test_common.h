@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -223,4 +223,14 @@ void SDLTest_CommonQuit(SDLTest_CommonState * state);
  * \param usedHeight Returns the height used, so the caller can draw more below.
  *
  */
-void SDLTest_CommonDrawWindowInfo(SDL_Rendere
+void SDLTest_CommonDrawWindowInfo(SDL_Renderer * renderer, SDL_Window * window, int * usedHeight);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_test_common_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

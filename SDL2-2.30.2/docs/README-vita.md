@@ -1,4 +1,4 @@
-﻿PS Vita
+PS Vita
 =======
 SDL port for the Sony Playstation Vita and Sony Playstation TV
 

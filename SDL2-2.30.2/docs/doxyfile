@@ -1,4 +1,4 @@
-﻿# Doxyfile 1.5.9
+# Doxyfile 1.5.9
 
 # This file describes the settings to be used by the documentation system
 # doxygen (www.doxygen.org) for a project
@@ -1520,4 +1520,42 @@ DOT_GRAPH_MAX_NODES    = 60
 # that lay further from the root node will be omitted. Note that setting this 
 # option to 1 or 2 may greatly reduce the computation time needed for large 
 # code bases. Also note that the size of a graph can be further restricted by 
-# DOT_GRAPH_MAX_NODES. Using a depth of 0 mean
+# DOT_GRAPH_MAX_NODES. Using a depth of 0 means no depth restriction.
+
+MAX_DOT_GRAPH_DEPTH    = 2
+
+# Set the DOT_TRANSPARENT tag to YES to generate images with a transparent 
+# background. This is disabled by default, because dot on Windows does not 
+# seem to support this out of the box. Warning: Depending on the platform used, 
+# enabling this option may lead to badly anti-aliased labels on the edges of 
+# a graph (i.e. they become hard to read).
+
+DOT_TRANSPARENT        = NO
+
+# Set the DOT_MULTI_TARGETS tag to YES allow dot to generate multiple output 
+# files in one run (i.e. multiple -o and -T options on the command line). This 
+# makes dot run faster, but since only newer versions of dot (>1.8.10) 
+# support this, this feature is disabled by default.
+
+DOT_MULTI_TARGETS      = YES
+
+# If the GENERATE_LEGEND tag is set to YES (the default) Doxygen will 
+# generate a legend page explaining the meaning of the various boxes and 
+# arrows in the dot generated graphs.
+
+GENERATE_LEGEND        = YES
+
+# If the DOT_CLEANUP tag is set to YES (the default) Doxygen will 
+# remove the intermediate dot files that are used to generate 
+# the various graphs.
+
+DOT_CLEANUP            = YES
+
+#---------------------------------------------------------------------------
+# Options related to the search engine
+#---------------------------------------------------------------------------
+
+# The SEARCHENGINE tag specifies whether or not a search engine should be 
+# used. If set to NO the values of all tags below this one will be ignored.
+
+SEARCHENGINE           = NO

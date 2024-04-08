@@ -1,4 +1,4 @@
-﻿# SDL2 CMake configuration file:
+# SDL2 CMake configuration file:
 # This file is meant to be placed in a cmake subfolder of SDL2-devel-2.x.y-VC
 
 cmake_minimum_required(VERSION 3.0...3.5)
@@ -108,4 +108,10 @@ if(EXISTS "${_sdl2test_library}")
                 INTERFACE_SDL_VERSION "SDL2"
         )
     endif()
-    set(SDL2_SDL2test_FOUND 
+    set(SDL2_SDL2test_FOUND TRUE)
+else()
+    set(SDL2_SDL2_FOUND FALSE)
+endif()
+unset(_sdl2test_library)
+
+check_required_components(SDL2)

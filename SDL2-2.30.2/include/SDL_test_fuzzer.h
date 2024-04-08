@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -366,4 +366,21 @@ char * SDLTest_RandomAsciiStringWithMaximumLength(int maxLength);
  *
  * \returns a newly allocated random string; or NULL if size was invalid or string could not be allocated.
  */
-char * SDLTe
+char * SDLTest_RandomAsciiStringOfSize(int size);
+
+/**
+ * Get the invocation count for the fuzzer since last ...FuzzerInit.
+ *
+ * \returns the invocation count.
+ */
+int SDLTest_GetFuzzerInvocationCount(void);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_test_fuzzer_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

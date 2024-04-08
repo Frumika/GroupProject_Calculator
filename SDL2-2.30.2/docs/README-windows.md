@@ -1,4 +1,4 @@
-﻿# Windows
+# Windows
 
 ## LLVM and Intel C++ compiler support
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -185,4 +185,14 @@ extern DECLSPEC SDL_BlendMode SDLCALL SDL_ComposeCustomBlendMode(SDL_BlendFactor
                                                                  SDL_BlendOperation colorOperation,
                                                                  SDL_BlendFactor srcAlphaFactor,
                                                                  SDL_BlendFactor dstAlphaFactor,
-                                                                 SDL_BlendOperation
+                                                                 SDL_BlendOperation alphaOperation);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_blendmode_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

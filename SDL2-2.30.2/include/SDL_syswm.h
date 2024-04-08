@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -369,4 +369,18 @@ typedef struct SDL_SysWMinfo SDL_SysWMinfo;
  *          of the `info` struct is valid, or SDL_FALSE if the information
  *          could not be retrieved; call SDL_GetError() for more information.
  *
- * 
+ * \since This function is available since SDL 2.0.0.
+ */
+extern DECLSPEC SDL_bool SDLCALL SDL_GetWindowWMInfo(SDL_Window * window,
+                                                     SDL_SysWMinfo * info);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_syswm_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

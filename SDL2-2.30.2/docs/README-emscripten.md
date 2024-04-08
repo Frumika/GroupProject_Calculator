@@ -1,4 +1,4 @@
-﻿# Emscripten
+# Emscripten
 
 ## The state of things
 

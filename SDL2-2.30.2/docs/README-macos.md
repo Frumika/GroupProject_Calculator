@@ -1,4 +1,4 @@
-﻿# Mac OS X (aka macOS).
+# Mac OS X (aka macOS).
 
 These instructions are for people using Apple's Mac OS X (pronounced
 "ten"), which in newer versions is just referred to as "macOS".

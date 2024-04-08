@@ -1,4 +1,4 @@
-﻿#ifndef __gles2_gl2ext_h_
+#ifndef __gles2_gl2ext_h_
 #define __gles2_gl2ext_h_ 1
 
 #ifdef __cplusplus
@@ -3946,4 +3946,88 @@ GL_APICALL void GL_APIENTRY glFramebufferFetchBarrierQCOM (void);
 #define GL_SHADING_RATE_4X4_PIXELS_QCOM   0x96AE
 typedef void (GL_APIENTRYP PFNGLSHADINGRATEQCOMPROC) (GLenum rate);
 #ifdef GL_GLEXT_PROTOTYPES
-G
+GL_APICALL void GL_APIENTRY glShadingRateQCOM (GLenum rate);
+#endif
+#endif /* GL_QCOM_shading_rate */
+
+#ifndef GL_QCOM_texture_foveated
+#define GL_QCOM_texture_foveated 1
+#define GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM 0x8BFB
+#define GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM 0x8BFC
+#define GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM 0x8BFD
+#define GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM 0x8BFE
+#define GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM 0x8BFF
+typedef void (GL_APIENTRYP PFNGLTEXTUREFOVEATIONPARAMETERSQCOMPROC) (GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea);
+#ifdef GL_GLEXT_PROTOTYPES
+GL_APICALL void GL_APIENTRY glTextureFoveationParametersQCOM (GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea);
+#endif
+#endif /* GL_QCOM_texture_foveated */
+
+#ifndef GL_QCOM_texture_foveated2
+#define GL_QCOM_texture_foveated2 1
+#define GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM 0x96A0
+#endif /* GL_QCOM_texture_foveated2 */
+
+#ifndef GL_QCOM_texture_foveated_subsampled_layout
+#define GL_QCOM_texture_foveated_subsampled_layout 1
+#define GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM 0x00000004
+#define GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM 0x8FA1
+#endif /* GL_QCOM_texture_foveated_subsampled_layout */
+
+#ifndef GL_QCOM_tiled_rendering
+#define GL_QCOM_tiled_rendering 1
+#define GL_COLOR_BUFFER_BIT0_QCOM         0x00000001
+#define GL_COLOR_BUFFER_BIT1_QCOM         0x00000002
+#define GL_COLOR_BUFFER_BIT2_QCOM         0x00000004
+#define GL_COLOR_BUFFER_BIT3_QCOM         0x00000008
+#define GL_COLOR_BUFFER_BIT4_QCOM         0x00000010
+#define GL_COLOR_BUFFER_BIT5_QCOM         0x00000020
+#define GL_COLOR_BUFFER_BIT6_QCOM         0x00000040
+#define GL_COLOR_BUFFER_BIT7_QCOM         0x00000080
+#define GL_DEPTH_BUFFER_BIT0_QCOM         0x00000100
+#define GL_DEPTH_BUFFER_BIT1_QCOM         0x00000200
+#define GL_DEPTH_BUFFER_BIT2_QCOM         0x00000400
+#define GL_DEPTH_BUFFER_BIT3_QCOM         0x00000800
+#define GL_DEPTH_BUFFER_BIT4_QCOM         0x00001000
+#define GL_DEPTH_BUFFER_BIT5_QCOM         0x00002000
+#define GL_DEPTH_BUFFER_BIT6_QCOM         0x00004000
+#define GL_DEPTH_BUFFER_BIT7_QCOM         0x00008000
+#define GL_STENCIL_BUFFER_BIT0_QCOM       0x00010000
+#define GL_STENCIL_BUFFER_BIT1_QCOM       0x00020000
+#define GL_STENCIL_BUFFER_BIT2_QCOM       0x00040000
+#define GL_STENCIL_BUFFER_BIT3_QCOM       0x00080000
+#define GL_STENCIL_BUFFER_BIT4_QCOM       0x00100000
+#define GL_STENCIL_BUFFER_BIT5_QCOM       0x00200000
+#define GL_STENCIL_BUFFER_BIT6_QCOM       0x00400000
+#define GL_STENCIL_BUFFER_BIT7_QCOM       0x00800000
+#define GL_MULTISAMPLE_BUFFER_BIT0_QCOM   0x01000000
+#define GL_MULTISAMPLE_BUFFER_BIT1_QCOM   0x02000000
+#define GL_MULTISAMPLE_BUFFER_BIT2_QCOM   0x04000000
+#define GL_MULTISAMPLE_BUFFER_BIT3_QCOM   0x08000000
+#define GL_MULTISAMPLE_BUFFER_BIT4_QCOM   0x10000000
+#define GL_MULTISAMPLE_BUFFER_BIT5_QCOM   0x20000000
+#define GL_MULTISAMPLE_BUFFER_BIT6_QCOM   0x40000000
+#define GL_MULTISAMPLE_BUFFER_BIT7_QCOM   0x80000000
+typedef void (GL_APIENTRYP PFNGLSTARTTILINGQCOMPROC) (GLuint x, GLuint y, GLuint width, GLuint height, GLbitfield preserveMask);
+typedef void (GL_APIENTRYP PFNGLENDTILINGQCOMPROC) (GLbitfield preserveMask);
+#ifdef GL_GLEXT_PROTOTYPES
+GL_APICALL void GL_APIENTRY glStartTilingQCOM (GLuint x, GLuint y, GLuint width, GLuint height, GLbitfield preserveMask);
+GL_APICALL void GL_APIENTRY glEndTilingQCOM (GLbitfield preserveMask);
+#endif
+#endif /* GL_QCOM_tiled_rendering */
+
+#ifndef GL_QCOM_writeonly_rendering
+#define GL_QCOM_writeonly_rendering 1
+#define GL_WRITEONLY_RENDERING_QCOM       0x8823
+#endif /* GL_QCOM_writeonly_rendering */
+
+#ifndef GL_VIV_shader_binary
+#define GL_VIV_shader_binary 1
+#define GL_SHADER_BINARY_VIV              0x8FC4
+#endif /* GL_VIV_shader_binary */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

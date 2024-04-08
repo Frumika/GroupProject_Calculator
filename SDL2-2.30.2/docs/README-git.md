@@ -1,4 +1,4 @@
-﻿git
+git
 =========
 
 The latest development version of SDL is available via git.

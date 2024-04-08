@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -338,4 +338,18 @@ extern DECLSPEC SDL_bool SDLCALL SDL_HasScreenKeyboardSupport(void);
  * \param window the window for which screen keyboard should be queried
  * \returns SDL_TRUE if screen keyboard is shown or SDL_FALSE if not.
  *
- * \s
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_HasScreenKeyboardSupport
+ */
+extern DECLSPEC SDL_bool SDLCALL SDL_IsScreenKeyboardShown(SDL_Window *window);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_keyboard_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

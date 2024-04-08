@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -1296,4 +1296,46 @@ extern DECLSPEC int SDLCALL SDL_HapticRumbleSupported(SDL_Haptic * haptic);
  * \sa SDL_HapticRumbleStop
  * \sa SDL_HapticRumbleSupported
  */
-extern DECLSPEC int SDLC
+extern DECLSPEC int SDLCALL SDL_HapticRumbleInit(SDL_Haptic * haptic);
+
+/**
+ * Run a simple rumble effect on a haptic device.
+ *
+ * \param haptic the haptic device to play the rumble effect on
+ * \param strength strength of the rumble to play as a 0-1 float value
+ * \param length length of the rumble to play in milliseconds
+ * \returns 0 on success or a negative error code on failure; call
+ *          SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_HapticRumbleInit
+ * \sa SDL_HapticRumbleStop
+ * \sa SDL_HapticRumbleSupported
+ */
+extern DECLSPEC int SDLCALL SDL_HapticRumblePlay(SDL_Haptic * haptic, float strength, Uint32 length );
+
+/**
+ * Stop the simple rumble on a haptic device.
+ *
+ * \param haptic the haptic device to stop the rumble effect on
+ * \returns 0 on success or a negative error code on failure; call
+ *          SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_HapticRumbleInit
+ * \sa SDL_HapticRumblePlay
+ * \sa SDL_HapticRumbleSupported
+ */
+extern DECLSPEC int SDLCALL SDL_HapticRumbleStop(SDL_Haptic * haptic);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_haptic_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

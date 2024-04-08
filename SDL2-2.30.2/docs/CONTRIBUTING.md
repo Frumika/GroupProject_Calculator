@@ -1,4 +1,4 @@
-﻿# Contributing to SDL
+# Contributing to SDL
 
 We appreciate your interest in contributing to SDL, this document will describe how to report bugs, contribute code or ideas or edit documentation.
 
@@ -92,4 +92,6 @@ Tests allow you to verify if your changes did not break any behaviour, here are 
 
 The wiki documentation for API functions is synchronised from the headers' doxygen comments. As such, all modifications to syntax; function parameters; return value; version; related functions should be done in the header directly.
 
-### E
+### Editing the wiki
+
+Other changes to the wiki should done directly from https://wiki.libsdl.org/

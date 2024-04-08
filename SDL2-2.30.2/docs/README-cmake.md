@@ -1,4 +1,4 @@
-﻿# CMake
+# CMake
 
 (www.cmake.org)
 

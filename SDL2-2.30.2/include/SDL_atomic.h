@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -392,4 +392,23 @@ extern DECLSPEC void* SDLCALL SDL_AtomicSetPtr(void **a, void* v);
  * ***Note: If you don't know what this function is for, you shouldn't use
  * it!***
  *
- * \param a a pointer 
+ * \param a a pointer to a pointer
+ * \returns the current value of a pointer.
+ *
+ * \since This function is available since SDL 2.0.2.
+ *
+ * \sa SDL_AtomicCASPtr
+ * \sa SDL_AtomicSetPtr
+ */
+extern DECLSPEC void* SDLCALL SDL_AtomicGetPtr(void **a);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+
+#include "close_code.h"
+
+#endif /* SDL_atomic_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿RISC OS
+RISC OS
 =======
 
 Requirements:

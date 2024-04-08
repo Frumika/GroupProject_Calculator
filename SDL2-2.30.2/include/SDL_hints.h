@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -2792,4 +2792,89 @@ extern DECLSPEC void SDLCALL SDL_ResetHints(void);
  *
  * \sa SDL_SetHint
  * \sa SDL_SetHintWithPriority
+ */
+extern DECLSPEC const char * SDLCALL SDL_GetHint(const char *name);
+
+/**
+ * Get the boolean value of a hint variable.
  *
+ * \param name the name of the hint to get the boolean value from
+ * \param default_value the value to return if the hint does not exist
+ * \returns the boolean value of a hint or the provided default value if the
+ *          hint does not exist.
+ *
+ * \since This function is available since SDL 2.0.5.
+ *
+ * \sa SDL_GetHint
+ * \sa SDL_SetHint
+ */
+extern DECLSPEC SDL_bool SDLCALL SDL_GetHintBoolean(const char *name, SDL_bool default_value);
+
+/**
+ * Type definition of the hint callback function.
+ *
+ * \param userdata what was passed as `userdata` to SDL_AddHintCallback()
+ * \param name what was passed as `name` to SDL_AddHintCallback()
+ * \param oldValue the previous hint value
+ * \param newValue the new value hint is to be set to
+ */
+typedef void (SDLCALL *SDL_HintCallback)(void *userdata, const char *name, const char *oldValue, const char *newValue);
+
+/**
+ * Add a function to watch a particular hint.
+ *
+ * \param name the hint to watch
+ * \param callback An SDL_HintCallback function that will be called when the
+ *                 hint value changes
+ * \param userdata a pointer to pass to the callback function
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_DelHintCallback
+ */
+extern DECLSPEC void SDLCALL SDL_AddHintCallback(const char *name,
+                                                 SDL_HintCallback callback,
+                                                 void *userdata);
+
+/**
+ * Remove a function watching a particular hint.
+ *
+ * \param name the hint being watched
+ * \param callback An SDL_HintCallback function that will be called when the
+ *                 hint value changes
+ * \param userdata a pointer being passed to the callback function
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_AddHintCallback
+ */
+extern DECLSPEC void SDLCALL SDL_DelHintCallback(const char *name,
+                                                 SDL_HintCallback callback,
+                                                 void *userdata);
+
+/**
+ * Clear all hints.
+ *
+ * This function is automatically called during SDL_Quit(), and deletes all
+ * callbacks without calling them and frees all memory associated with hints.
+ * If you're calling this from application code you probably want to call
+ * SDL_ResetHints() instead.
+ *
+ * This function will be removed from the API the next time we rev the ABI.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_ResetHints
+ */
+extern DECLSPEC void SDLCALL SDL_ClearHints(void);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_hints_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿PSP
+PSP
 ======
 SDL2 port for the Sony PSP contributed by:
 - Captian Lex

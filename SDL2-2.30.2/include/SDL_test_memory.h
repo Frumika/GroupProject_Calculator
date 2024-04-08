@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -58,4 +58,6 @@ void SDLTest_LogAllocations(void);
 #endif
 #include "close_code.h"
 
-#endif /
+#endif /* SDL_test_memory_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

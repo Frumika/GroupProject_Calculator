@@ -1,4 +1,4 @@
-﻿PS2
+PS2
 ======
 SDL2 port for the Sony Playstation 2 contributed by:
 - Francisco Javier Trujillo Mata

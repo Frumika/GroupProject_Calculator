@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -1061,4 +1061,36 @@ extern DECLSPEC void SDLCALL SDL_GameControllerClose(SDL_GameController *gamecon
  * platforms.
  *
  * \param gamecontroller the controller to query
- * \param button a button o
+ * \param button a button on the game controller
+ * \returns the sfSymbolsName or NULL if the name can't be found
+ *
+ * \since This function is available since SDL 2.0.18.
+ *
+ * \sa SDL_GameControllerGetAppleSFSymbolsNameForAxis
+ */
+extern DECLSPEC const char* SDLCALL SDL_GameControllerGetAppleSFSymbolsNameForButton(SDL_GameController *gamecontroller, SDL_GameControllerButton button);
+
+/**
+ * Return the sfSymbolsName for a given axis on a game controller on Apple
+ * platforms.
+ *
+ * \param gamecontroller the controller to query
+ * \param axis an axis on the game controller
+ * \returns the sfSymbolsName or NULL if the name can't be found
+ *
+ * \since This function is available since SDL 2.0.18.
+ *
+ * \sa SDL_GameControllerGetAppleSFSymbolsNameForButton
+ */
+extern DECLSPEC const char* SDLCALL SDL_GameControllerGetAppleSFSymbolsNameForAxis(SDL_GameController *gamecontroller, SDL_GameControllerAxis axis);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_gamecontroller_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

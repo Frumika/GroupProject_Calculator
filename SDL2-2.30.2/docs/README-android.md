@@ -1,4 +1,4 @@
-﻿Android
+Android
 ================================================================================
 
 Matt Styles wrote a tutorial on building SDL for Android with Visual Studio:

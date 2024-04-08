@@ -1,4 +1,4 @@
-﻿# Dynamic API
+# Dynamic API
 
 Originally posted on Ryan's Google+ account.
 

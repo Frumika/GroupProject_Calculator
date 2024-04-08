@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -635,4 +635,28 @@ extern DECLSPEC void SDLCALL SDL_GetRGB(Uint32 pixel,
  */
 extern DECLSPEC void SDLCALL SDL_GetRGBA(Uint32 pixel,
                                          const SDL_PixelFormat * format,
-                                
+                                         Uint8 * r, Uint8 * g, Uint8 * b,
+                                         Uint8 * a);
+
+/**
+ * Calculate a 256 entry gamma ramp for a gamma value.
+ *
+ * \param gamma a gamma value where 0.0 is black and 1.0 is identity
+ * \param ramp an array of 256 values filled in with the gamma ramp
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_SetWindowGammaRamp
+ */
+extern DECLSPEC void SDLCALL SDL_CalculateGammaRamp(float gamma, Uint16 * ramp);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_pixels_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

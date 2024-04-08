@@ -1,4 +1,4 @@
-﻿Simple DirectMedia Layer 2 for OS/2 & eComStation
+Simple DirectMedia Layer 2 for OS/2 & eComStation
 ================================================================================
 SDL port for OS/2, authored by Andrey Vasilkin <digi@os2.snc.ru>, 2016
 

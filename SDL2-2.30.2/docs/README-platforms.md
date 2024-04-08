@@ -1,4 +1,4 @@
-﻿Platforms
+Platforms
 =========
 
 We maintain the list of supported platforms on our wiki now, and how to

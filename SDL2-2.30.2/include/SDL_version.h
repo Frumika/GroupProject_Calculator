@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -190,4 +190,15 @@ extern DECLSPEC const char *SDLCALL SDL_GetRevision(void);
  *
  * \sa SDL_GetRevision
  */
-extern SDL_DEPRECATED DECLSPEC int SDLCALL SDL_G
+extern SDL_DEPRECATED DECLSPEC int SDLCALL SDL_GetRevisionNumber(void);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_version_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

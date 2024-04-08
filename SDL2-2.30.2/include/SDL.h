@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -218,4 +218,16 @@ extern DECLSPEC Uint32 SDLCALL SDL_WasInit(Uint32 flags);
  * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_Init
- * \sa SDL_Qu
+ * \sa SDL_QuitSubSystem
+ */
+extern DECLSPEC void SDLCALL SDL_Quit(void);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

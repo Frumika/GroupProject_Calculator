@@ -1,4 +1,4 @@
-﻿HarfBuzz is licensed under the so-called "Old MIT" license.  Details follow.
+HarfBuzz is licensed under the so-called "Old MIT" license.  Details follow.
 For parts of HarfBuzz that are licensed under different licenses see individual
 files names COPYING in subdirectories where applicable.
 

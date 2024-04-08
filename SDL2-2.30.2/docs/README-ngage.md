@@ -1,4 +1,4 @@
-﻿Nokia N-Gage
+Nokia N-Gage
 ============
 
 SDL2 port for Symbian S60v1 and v2 with a main focus on the Nokia N-Gage

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -104,4 +104,10 @@ extern DECLSPEC void SDLCALL SDL_Metal_GetDrawableSize(SDL_Window* window, int *
 
 /* @} *//* Metal support functions */
 
-/* Ends C function def
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_metal_h_ */

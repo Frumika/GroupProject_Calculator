@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -960,4 +960,38 @@ extern DECLSPEC int SDLCALL SDL_UpperBlitScaled
  *
  * \sa SDL_BlitScaled
  */
-extern DECLSPEC int SD
+extern DECLSPEC int SDLCALL SDL_LowerBlitScaled
+    (SDL_Surface * src, SDL_Rect * srcrect,
+    SDL_Surface * dst, SDL_Rect * dstrect);
+
+/**
+ * Set the YUV conversion mode
+ *
+ * \since This function is available since SDL 2.0.8.
+ */
+extern DECLSPEC void SDLCALL SDL_SetYUVConversionMode(SDL_YUV_CONVERSION_MODE mode);
+
+/**
+ * Get the YUV conversion mode
+ *
+ * \since This function is available since SDL 2.0.8.
+ */
+extern DECLSPEC SDL_YUV_CONVERSION_MODE SDLCALL SDL_GetYUVConversionMode(void);
+
+/**
+ * Get the YUV conversion mode, returning the correct mode for the resolution
+ * when the current conversion mode is SDL_YUV_CONVERSION_AUTOMATIC
+ *
+ * \since This function is available since SDL 2.0.8.
+ */
+extern DECLSPEC SDL_YUV_CONVERSION_MODE SDLCALL SDL_GetYUVConversionModeForResolution(int width, int height);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_surface_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

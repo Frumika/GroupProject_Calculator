@@ -30,7 +30,7 @@ void DrawFunc(function<double (double)> ChosenFunc)
         return;
     }
 
-    font = TTF_OpenFont("D:/Project/GroupProject_Calculator/x64/Debug/arial.ttf", MAX_FONT_SIZE);
+    font = TTF_OpenFont("D:/My_C++_projects/GroupProject_Calculator/x64/Debug/arial.ttf", MAX_FONT_SIZE);
 
     if (!font)
     {

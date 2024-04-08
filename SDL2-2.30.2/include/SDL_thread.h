@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -442,4 +442,23 @@ extern DECLSPEC void * SDLCALL SDL_TLSGet(SDL_TLSID id);
  * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_TLSCreate
- * \sa SDL_
+ * \sa SDL_TLSGet
+ */
+extern DECLSPEC int SDLCALL SDL_TLSSet(SDL_TLSID id, const void *value, void (SDLCALL *destructor)(void*));
+
+/**
+ * Cleanup all TLS data for this thread.
+ *
+ * \since This function is available since SDL 2.0.16.
+ */
+extern DECLSPEC void SDLCALL SDL_TLSCleanup(void);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_thread_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

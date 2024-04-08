@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -570,4 +570,25 @@ extern DECLSPEC void * SDLCALL SDL_SIMDRealloc(void *mem, const size_t len);
  *
  * The memory pointed to by `ptr` is no longer valid for access upon return,
  * and may be returned to the system or reused by a future allocation. The
- * pointer p
+ * pointer passed to this function is no longer safe to dereference once this
+ * function returns, and should be discarded.
+ *
+ * \param ptr The pointer, returned from SDL_SIMDAlloc or SDL_SIMDRealloc, to
+ *            deallocate. NULL is a legal no-op.
+ *
+ * \since This function is available since SDL 2.0.10.
+ *
+ * \sa SDL_SIMDAlloc
+ * \sa SDL_SIMDRealloc
+ */
+extern DECLSPEC void SDLCALL SDL_SIMDFree(void *ptr);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_cpuinfo_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

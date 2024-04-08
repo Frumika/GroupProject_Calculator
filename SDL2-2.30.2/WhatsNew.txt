@@ -1,4 +1,4 @@
-﻿
+
 This is a list of major changes in SDL's version history.
 
 ---------------------------------------------------------------------------

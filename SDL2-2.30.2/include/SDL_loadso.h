@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -105,4 +105,11 @@ extern DECLSPEC void *SDLCALL SDL_LoadFunction(void *handle,
 extern DECLSPEC void SDLCALL SDL_UnloadObject(void *handle);
 
 /* Ends C function definitions when using C++ */
-#ifdef __
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_loadso_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

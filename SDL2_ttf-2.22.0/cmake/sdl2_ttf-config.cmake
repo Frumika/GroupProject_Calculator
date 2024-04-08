@@ -1,4 +1,4 @@
-﻿# SDL2_image CMake configuration file:
+# SDL2_image CMake configuration file:
 # This file is meant to be placed in a cmake subfolder of SDL2_image-devel-2.x.y-VC
 
 include(FeatureSummary)
@@ -46,4 +46,6 @@ if(NOT TARGET SDL2_ttf::SDL2_ttf)
 endif()
 
 unset(_sdl_arch_subdir)
-unset(_sdl2ttf_incd
+unset(_sdl2ttf_incdir)
+unset(_sdl2ttf_library)
+unset(_sdl2ttf_dll)

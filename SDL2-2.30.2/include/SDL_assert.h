@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -306,4 +306,17 @@ extern DECLSPEC const SDL_AssertData * SDLCALL SDL_GetAssertionReport(void);
 extern DECLSPEC void SDLCALL SDL_ResetAssertionReport(void);
 
 
-/* these had wron
+/* these had wrong naming conventions until 2.0.4. Please update your app! */
+#define SDL_assert_state SDL_AssertState
+#define SDL_assert_data SDL_AssertData
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_assert_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -330,3 +330,19 @@ SDL_SwapFloat(float x)
 #define SDL_SwapLE32(X)     SDL_Swap32(X)
 #define SDL_SwapLE64(X)     SDL_Swap64(X)
 #define SDL_SwapFloatLE(X)  SDL_SwapFloat(X)
+#define SDL_SwapBE16(X)     (X)
+#define SDL_SwapBE32(X)     (X)
+#define SDL_SwapBE64(X)     (X)
+#define SDL_SwapFloatBE(X)  (X)
+#endif
+/* @} *//* Swap to native */
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_endian_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -1031,3 +1031,39 @@ extern DECLSPEC int SDLCALL SDL_JoystickSetLED(SDL_Joystick *joystick, Uint8 red
  * \param data The data to send to the joystick
  * \param size The size of the data to send to the joystick
  * \returns 0, or -1 if this joystick or driver doesn't support effect packets
+ *
+ * \since This function is available since SDL 2.0.16.
+ */
+extern DECLSPEC int SDLCALL SDL_JoystickSendEffect(SDL_Joystick *joystick, const void *data, int size);
+
+/**
+ * Close a joystick previously opened with SDL_JoystickOpen().
+ *
+ * \param joystick The joystick device to close
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_JoystickOpen
+ */
+extern DECLSPEC void SDLCALL SDL_JoystickClose(SDL_Joystick *joystick);
+
+/**
+ * Get the battery level of a joystick as SDL_JoystickPowerLevel.
+ *
+ * \param joystick the SDL_Joystick to query
+ * \returns the current battery level as SDL_JoystickPowerLevel on success or
+ *          `SDL_JOYSTICK_POWER_UNKNOWN` if it is unknown
+ *
+ * \since This function is available since SDL 2.0.4.
+ */
+extern DECLSPEC SDL_JoystickPowerLevel SDLCALL SDL_JoystickCurrentPowerLevel(SDL_Joystick *joystick);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_joystick_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

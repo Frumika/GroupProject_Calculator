@@ -1,4 +1,4 @@
-﻿GDK
+GDK
 =====
 
 This port allows SDL applications to run via Microsoft's Game Development Kit (GDK).

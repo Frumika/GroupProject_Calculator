@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -313,4 +313,19 @@ typedef unsigned int uintptr_t;
 #ifndef SDL_VIDEO_OPENGL_ES2
 #define SDL_VIDEO_OPENGL_ES2    1
 #endif
-#ifndef SDL_V
+#ifndef SDL_VIDEO_OPENGL_EGL
+#define SDL_VIDEO_OPENGL_EGL    1
+#endif
+
+/* Enable Vulkan support */
+#define SDL_VIDEO_VULKAN 1
+
+/* Enable system power support */
+#define SDL_POWER_WINDOWS 1
+
+/* Enable filesystem support */
+#define SDL_FILESYSTEM_WINDOWS  1
+
+#endif /* SDL_config_windows_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

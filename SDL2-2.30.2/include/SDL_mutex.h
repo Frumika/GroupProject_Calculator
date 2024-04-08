@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -520,4 +520,26 @@ extern DECLSPEC int SDLCALL SDL_CondWait(SDL_cond * cond, SDL_mutex * mutex);
  *          the condition is not signaled in the allotted time, or a negative
  *          error code on failure; call SDL_GetError() for more information.
  *
- * \s
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_CondBroadcast
+ * \sa SDL_CondSignal
+ * \sa SDL_CondWait
+ * \sa SDL_CreateCond
+ * \sa SDL_DestroyCond
+ */
+extern DECLSPEC int SDLCALL SDL_CondWaitTimeout(SDL_cond * cond,
+                                                SDL_mutex * mutex, Uint32 ms);
+
+/* @} *//* Condition variable functions */
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_mutex_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

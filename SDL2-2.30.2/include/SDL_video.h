@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -2113,4 +2113,72 @@ extern DECLSPEC void SDLCALL SDL_GL_GetDrawableSize(SDL_Window * window, int *w,
  * WGL_EXT_swap_control_tear.
  *
  * Read more on the Khronos wiki:
- * https://www.khronos.o
+ * https://www.khronos.org/opengl/wiki/Swap_Interval#Adaptive_Vsync
+ *
+ * \param interval 0 for immediate updates, 1 for updates synchronized with
+ *                 the vertical retrace, -1 for adaptive vsync
+ * \returns 0 on success or -1 if setting the swap interval is not supported;
+ *          call SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_GL_GetSwapInterval
+ */
+extern DECLSPEC int SDLCALL SDL_GL_SetSwapInterval(int interval);
+
+/**
+ * Get the swap interval for the current OpenGL context.
+ *
+ * If the system can't determine the swap interval, or there isn't a valid
+ * current context, this function will return 0 as a safe default.
+ *
+ * \returns 0 if there is no vertical retrace synchronization, 1 if the buffer
+ *          swap is synchronized with the vertical retrace, and -1 if late
+ *          swaps happen immediately instead of waiting for the next retrace;
+ *          call SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_GL_SetSwapInterval
+ */
+extern DECLSPEC int SDLCALL SDL_GL_GetSwapInterval(void);
+
+/**
+ * Update a window with OpenGL rendering.
+ *
+ * This is used with double-buffered OpenGL contexts, which are the default.
+ *
+ * On macOS, make sure you bind 0 to the draw framebuffer before swapping the
+ * window, otherwise nothing will happen. If you aren't using
+ * glBindFramebuffer(), this is the default and you won't have to do anything
+ * extra.
+ *
+ * \param window the window to change
+ *
+ * \since This function is available since SDL 2.0.0.
+ */
+extern DECLSPEC void SDLCALL SDL_GL_SwapWindow(SDL_Window * window);
+
+/**
+ * Delete an OpenGL context.
+ *
+ * \param context the OpenGL context to be deleted
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_GL_CreateContext
+ */
+extern DECLSPEC void SDLCALL SDL_GL_DeleteContext(SDL_GLContext context);
+
+/* @} *//* OpenGL support functions */
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_video_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

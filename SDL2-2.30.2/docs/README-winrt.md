@@ -1,4 +1,4 @@
-﻿WinRT
+WinRT
 =====
 
 This port allows SDL applications to run on Microsoft's platforms that require

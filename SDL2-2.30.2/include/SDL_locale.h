@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -95,3 +95,9 @@ extern DECLSPEC SDL_Locale * SDLCALL SDL_GetPreferredLocales(void);
 /* *INDENT-OFF* */
 }
 /* *INDENT-ON* */
+#endif
+#include "close_code.h"
+
+#endif /* _SDL_locale_h */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿# Nintendo 3DS
+# Nintendo 3DS
 
 SDL port for the Nintendo 3DS [Homebrew toolchain](https://devkitpro.org/) contributed by:
 

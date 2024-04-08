@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -1867,3 +1867,58 @@ extern DECLSPEC int SDLCALL SDL_GL_UnbindTexture(SDL_Texture *texture);
 
 /**
  * Get the CAMetalLayer associated with the given Metal renderer.
+ *
+ * This function returns `void *`, so SDL doesn't have to include Metal's
+ * headers, but it can be safely cast to a `CAMetalLayer *`.
+ *
+ * \param renderer The renderer to query
+ * \returns a `CAMetalLayer *` on success, or NULL if the renderer isn't a
+ *          Metal renderer
+ *
+ * \since This function is available since SDL 2.0.8.
+ *
+ * \sa SDL_RenderGetMetalCommandEncoder
+ */
+extern DECLSPEC void *SDLCALL SDL_RenderGetMetalLayer(SDL_Renderer * renderer);
+
+/**
+ * Get the Metal command encoder for the current frame
+ *
+ * This function returns `void *`, so SDL doesn't have to include Metal's
+ * headers, but it can be safely cast to an `id<MTLRenderCommandEncoder>`.
+ *
+ * Note that as of SDL 2.0.18, this will return NULL if Metal refuses to give
+ * SDL a drawable to render to, which might happen if the window is
+ * hidden/minimized/offscreen. This doesn't apply to command encoders for
+ * render targets, just the window's backbuffer. Check your return values!
+ *
+ * \param renderer The renderer to query
+ * \returns an `id<MTLRenderCommandEncoder>` on success, or NULL if the
+ *          renderer isn't a Metal renderer or there was an error.
+ *
+ * \since This function is available since SDL 2.0.8.
+ *
+ * \sa SDL_RenderGetMetalLayer
+ */
+extern DECLSPEC void *SDLCALL SDL_RenderGetMetalCommandEncoder(SDL_Renderer * renderer);
+
+/**
+ * Toggle VSync of the given renderer.
+ *
+ * \param renderer The renderer to toggle
+ * \param vsync 1 for on, 0 for off. All other values are reserved
+ * \returns a 0 int on success, or non-zero on failure
+ *
+ * \since This function is available since SDL 2.0.18.
+ */
+extern DECLSPEC int SDLCALL SDL_RenderSetVSync(SDL_Renderer* renderer, int vsync);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_render_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿DirectFB
+DirectFB
 ========
 
 Supports:

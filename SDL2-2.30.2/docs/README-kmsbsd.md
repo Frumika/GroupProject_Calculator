@@ -1,4 +1,4 @@
-﻿KMSDRM on *BSD
+KMSDRM on *BSD
 ==================================================
 
 KMSDRM is supported on FreeBSD and OpenBSD. DragonFlyBSD works but requires being a root user. NetBSD isn't supported yet because the application will crash when creating the KMSDRM screen.

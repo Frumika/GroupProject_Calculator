@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -384,4 +384,21 @@ extern DECLSPEC void SDLCALL SDL_LogGetOutputFunction(SDL_LogOutputFunction *cal
  * Replace the default log output function with one of your own.
  *
  * \param callback an SDL_LogOutputFunction to call instead of the default
- * \param userdata a pointer that i
+ * \param userdata a pointer that is passed to `callback`
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_LogGetOutputFunction
+ */
+extern DECLSPEC void SDLCALL SDL_LogSetOutputFunction(SDL_LogOutputFunction callback, void *userdata);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_log_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

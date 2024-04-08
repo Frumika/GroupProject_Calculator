@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -1117,4 +1117,43 @@ extern DECLSPEC void SDLCALL SDL_FilterEvents(SDL_EventFilter filter,
  *
  * \param type the type of event; see SDL_EventType for details
  * \param state how to process the event
- * \returns `SDL_DISABLE` or `SDL_ENABLE`, representing the processing stat
+ * \returns `SDL_DISABLE` or `SDL_ENABLE`, representing the processing state
+ *          of the event before this function makes any changes to it.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_GetEventState
+ */
+extern DECLSPEC Uint8 SDLCALL SDL_EventState(Uint32 type, int state);
+/* @} */
+#define SDL_GetEventState(type) SDL_EventState(type, SDL_QUERY)
+
+/**
+ * Allocate a set of user-defined events, and return the beginning event
+ * number for that set of events.
+ *
+ * Calling this function with `numevents` <= 0 is an error and will return
+ * (Uint32)-1.
+ *
+ * Note, (Uint32)-1 means the maximum unsigned 32-bit integer value (or
+ * 0xFFFFFFFF), but is clearer to write.
+ *
+ * \param numevents the number of events to be allocated
+ * \returns the beginning event number, or (Uint32)-1 if there are not enough
+ *          user-defined events left.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_PushEvent
+ */
+extern DECLSPEC Uint32 SDLCALL SDL_RegisterEvents(int numevents);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_events_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

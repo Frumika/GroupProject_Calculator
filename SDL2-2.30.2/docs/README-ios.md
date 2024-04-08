@@ -1,4 +1,4 @@
-﻿iOS
+iOS
 ======
 
 Building the Simple DirectMedia Layer for iOS 9.0+

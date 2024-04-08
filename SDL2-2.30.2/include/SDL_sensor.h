@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -304,4 +304,19 @@ extern DECLSPEC void SDLCALL SDL_SensorClose(SDL_Sensor *sensor);
  * This needs to be called from the thread that initialized the sensor
  * subsystem.
  *
- * \since
+ * \since This function is available since SDL 2.0.9.
+ */
+extern DECLSPEC void SDLCALL SDL_SensorUpdate(void);
+
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+/* *INDENT-OFF* */
+}
+/* *INDENT-ON* */
+#endif
+#include "close_code.h"
+
+#endif /* SDL_sensor_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

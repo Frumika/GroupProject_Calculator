@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -80,4 +80,8 @@ extern DECLSPEC SDL_PowerState SDLCALL SDL_GetPowerInfo(int *seconds, int *perce
 #ifdef __cplusplus
 }
 #endif
-#incl
+#include "close_code.h"
+
+#endif /* SDL_power_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -47,4 +47,6 @@
 
 #endif /* _MSC_VER */
 
-#ifn
+#ifndef APIENTRY
+#define APIENTRY GL_APIENTRY
+#endif

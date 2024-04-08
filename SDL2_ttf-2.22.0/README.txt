@@ -1,4 +1,4 @@
-﻿
+
 SDL_ttf 2.0
 
 The latest version of this library is available from GitHub:

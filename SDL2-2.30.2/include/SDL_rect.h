@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -361,4 +361,16 @@ extern DECLSPEC SDL_bool SDLCALL SDL_EncloseFPoints(const SDL_FPoint * points,
  * \since This function is available since SDL 2.0.22.
  */
 extern DECLSPEC SDL_bool SDLCALL SDL_IntersectFRectAndLine(const SDL_FRect *
-                             
+                                                           rect, float *X1,
+                                                           float *Y1, float *X2,
+                                                           float *Y2);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_rect_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -53,4 +53,6 @@
 /* There are no functions directly affecting the quit event */
 
 #define SDL_QuitRequested() \
-        (SDL_PumpEvents(), (SDL_PeepEvents(NULL,0,SDL_PEEKEV
+        (SDL_PumpEvents(), (SDL_PeepEvents(NULL,0,SDL_PEEKEVENT,SDL_QUIT,SDL_QUIT) > 0))
+
+#endif /* SDL_quit_h_ */

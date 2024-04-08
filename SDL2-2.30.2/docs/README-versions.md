@@ -1,4 +1,4 @@
-﻿# Versioning
+# Versioning
 
 ## Since 2.23.0
 

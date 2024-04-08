@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -72,4 +72,8 @@ extern DECLSPEC int SDLCALL SDL_OpenURL(const char *url);
 #ifdef __cplusplus
 }
 #endif
-#include "cl
+#include "close_code.h"
+
+#endif /* SDL_misc_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

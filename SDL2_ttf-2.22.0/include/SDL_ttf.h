@@ -1,4 +1,4 @@
-﻿/*
+/*
   SDL_ttf:  A companion library to SDL for working with TrueType (tm) fonts
   Copyright (C) 2001-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -2247,4 +2247,72 @@ extern SDL_DEPRECATED DECLSPEC int SDLCALL TTF_SetDirection(int direction); /* h
  *
  * \deprecated This function expects an hb_script_t value, from HarfBuzz, cast
  *             to an int, and affects all fonts globally. Please use
- *             TTF_SetFontScriptName() instead, which accept
+ *             TTF_SetFontScriptName() instead, which accepts a string that is
+ *             converted to an equivalent int internally, and operates on a
+ *             per-font basis.
+ *
+ *             This is a global setting; fonts will favor a value set with
+ *             TTF_SetFontScriptName(), but if they have not had one
+ *             explicitly set, they will use the value specified here.
+ *
+ *             The default value is `HB_SCRIPT_UNKNOWN`.
+ *
+ * \returns 0, or -1 if SDL_ttf is not compiled with HarfBuzz support.
+ *
+ * \since This function is available since SDL_ttf 2.0.18.
+ *
+ * \sa TTF_SetFontScriptName
+ */
+extern SDL_DEPRECATED DECLSPEC int SDLCALL TTF_SetScript(int script); /* hb_script_t */
+
+/**
+ * Set direction to be used for text shaping by a font.
+ *
+ * Any value supplied here will override the global direction set with the
+ * deprecated TTF_SetDirection().
+ *
+ * Possible direction values are:
+ *
+ * - `TTF_DIRECTION_LTR` (Left to Right)
+ * - `TTF_DIRECTION_RTL` (Right to Left)
+ * - `TTF_DIRECTION_TTB` (Top to Bottom)
+ * - `TTF_DIRECTION_BTT` (Bottom to Top)
+ *
+ * If SDL_ttf was not built with HarfBuzz support, this function returns -1.
+ *
+ * \param font the font to specify a direction for.
+ * \param direction the new direction for text to flow.
+ * \returns 0 on success, or -1 on error.
+ *
+ * \since This function is available since SDL_ttf 2.20.0.
+ */
+extern DECLSPEC int SDLCALL TTF_SetFontDirection(TTF_Font *font, TTF_Direction direction);
+
+/**
+ * Set script to be used for text shaping by a font.
+ *
+ * Any value supplied here will override the global script set with the
+ * deprecated TTF_SetScript().
+ *
+ * The supplied script value must be a null-terminated string of exactly four
+ * characters.
+ *
+ * If SDL_ttf was not built with HarfBuzz support, this function returns -1.
+ *
+ * \param font the font to specify a direction for.
+ * \param script null-terminated string of exactly 4 characters.
+ * \returns 0 on success, or -1 on error.
+ *
+ * \since This function is available since SDL_ttf 2.20.0.
+ */
+extern DECLSPEC int SDLCALL TTF_SetFontScriptName(TTF_Font *font, const char *script);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_TTF_H_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

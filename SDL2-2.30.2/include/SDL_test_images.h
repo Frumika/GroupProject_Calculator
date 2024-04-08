@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -71,4 +71,8 @@ SDL_Surface *SDLTest_ImagePrimitivesBlend(void);
 #ifdef __cplusplus
 }
 #endif
-#include "close_code
+#include "close_code.h"
+
+#endif /* SDL_test_images_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

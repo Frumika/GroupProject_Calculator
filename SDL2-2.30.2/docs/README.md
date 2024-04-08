@@ -1,4 +1,4 @@
-﻿# Simple DirectMedia Layer
+# Simple DirectMedia Layer
 
 https://www.libsdl.org/
 

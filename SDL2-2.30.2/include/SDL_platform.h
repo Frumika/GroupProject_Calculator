@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -254,4 +254,16 @@ extern "C" {
  * \returns the name of the platform. If the correct platform name is not
  *          available, returns a string beginning with the text "Unknown".
  *
- * \since This function is avai
+ * \since This function is available since SDL 2.0.0.
+ */
+extern DECLSPEC const char * SDLCALL SDL_GetPlatform (void);
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_platform_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

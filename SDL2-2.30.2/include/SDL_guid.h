@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -92,3 +92,9 @@ extern DECLSPEC SDL_GUID SDLCALL SDL_GUIDFromString(const char *pchGUID);
 /* Ends C function definitions when using C++ */
 #ifdef __cplusplus
 }
+#endif
+#include "close_code.h"
+
+#endif /* SDL_guid_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */

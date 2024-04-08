@@ -1,4 +1,4 @@
-﻿Raspberry Pi
+Raspberry Pi
 ============
 
 Requirements:

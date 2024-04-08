@@ -1,4 +1,4 @@
-﻿Using SDL with Microsoft Visual C++
+Using SDL with Microsoft Visual C++
 ===================================
 
 ### by Lion Kimbro with additions by James Turk

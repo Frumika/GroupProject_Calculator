@@ -1,4 +1,4 @@
-﻿# Release checklist
+# Release checklist
 
 When changing the version, run `build-scripts/update-version.sh X Y Z`,
 where `X Y Z` are the major version, minor version, and patch level. So
@@ -44,4 +44,6 @@ mechanical work.
 
 * Bump version number from 2.Y.Z to 2.Y.(Z+1) (Y is odd)
 
-    * `./build-scripts
+    * `./build-scripts/update-version.sh 2 Y Z+1`
+
+* Do the release

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 2017, Mark Callow
 
@@ -202,4 +202,14 @@ extern DECLSPEC SDL_bool SDLCALL SDL_Vulkan_CreateSurface(SDL_Window *window,
  * \sa SDL_Vulkan_CreateSurface
  */
 extern DECLSPEC void SDLCALL SDL_Vulkan_GetDrawableSize(SDL_Window * window,
-                                       
+                                                        int *w, int *h);
+
+/* @} *//* Vulkan support functions */
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_vulkan_h_ */

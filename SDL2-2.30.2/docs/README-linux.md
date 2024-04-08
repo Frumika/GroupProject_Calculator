@@ -1,4 +1,4 @@
-﻿Linux
+Linux
 ================================================================================
 
 By default SDL will only link against glibc, the rest of the features will be

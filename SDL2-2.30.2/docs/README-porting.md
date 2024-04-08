@@ -1,4 +1,4 @@
-﻿Porting
+Porting
 =======
 
 * Porting To A New Platform

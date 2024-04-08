@@ -1,4 +1,4 @@
-﻿/*
+/*
   Simple DirectMedia Layer
   Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
 
@@ -810,4 +810,32 @@ extern DECLSPEC size_t SDLCALL SDL_WriteBE32(SDL_RWops * dst, Uint32 value);
  *
  * \sa SDL_WriteBE64
  */
-extern DECLSPEC size_t SDLCALL SDL_WriteLE
+extern DECLSPEC size_t SDLCALL SDL_WriteLE64(SDL_RWops * dst, Uint64 value);
+
+/**
+ * Use this function to write 64 bits in native format to a SDL_RWops as
+ * big-endian data.
+ *
+ * SDL byteswaps the data only if necessary, so the application always
+ * specifies native format, and the data written will be in big-endian format.
+ *
+ * \param dst the stream to which data will be written
+ * \param value the data to be written, in native format
+ * \returns 1 on successful write, 0 on error.
+ *
+ * \since This function is available since SDL 2.0.0.
+ *
+ * \sa SDL_WriteLE64
+ */
+extern DECLSPEC size_t SDLCALL SDL_WriteBE64(SDL_RWops * dst, Uint64 value);
+/* @} *//* Write endian functions */
+
+/* Ends C function definitions when using C++ */
+#ifdef __cplusplus
+}
+#endif
+#include "close_code.h"
+
+#endif /* SDL_rwops_h_ */
+
+/* vi: set ts=4 sw=4 expandtab: */
