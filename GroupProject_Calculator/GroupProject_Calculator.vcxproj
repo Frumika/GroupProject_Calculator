@@ -413,6 +413,16 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-04-Functions.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-03-Menu2.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-05-Integral.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-06-FuncRoot.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-07-ExtremumCalc.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-08-DrawFunc.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-09-DrawText.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-10-RenderGraph.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-11-DrawAxisLabels.cpp" />
+    <ClCompile Include="3-FunctionCalculator\3-FuC-File-12-SupportDrawFuncs.cpp" />
     <ClCompile Include="4-CombinatoricsCalculator\4-CoC-File-02-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -1553,10 +1563,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\Likay\Desktop\SDL\SDL2-2.30.2\include;C:\Users\Likay\Desktop\SDL\SDL2_ttf-2.22.0\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Likay\Desktop\SDL\SDL2-2.30.2\lib\x64;C:\Users\Likay\Desktop\SDL\SDL2_ttf-2.22.0\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
