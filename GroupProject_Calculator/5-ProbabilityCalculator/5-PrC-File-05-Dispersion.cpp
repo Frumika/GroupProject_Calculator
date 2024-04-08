@@ -5,11 +5,10 @@
 
 using namespace std;
 
+/* Калькулятор дисперсии */
 void runDispersion()
 {
     int arraySize;
-    double probabilitySum = 0, dispersion, mathExpectation;
-    double **x = new double*[2];    //Массив значений и вероятностей
 
     //Ввод количества величин
     do
@@ -34,39 +33,12 @@ void runDispersion()
         system("cls");
     }
     while (arraySize < 1 || arraySize > 25);
-    //Созданаие колонок в массиве
-    x[0] = new double[arraySize];
-    x[1] = new double[arraySize];
-    //Ввод пар значений + вероятностей
-    do
-    {
-        cout << "Введите пары значений + вероятности: ";
-        for(int column = 0; column < arraySize; column++)
-        {
-            double probability;
-            cin >> x[0][column] >> probability;
-            x[1][column] = probability;
-            probabilitySum += probability;
-        }
-        if(probabilitySum != 1)
-        {
-            cout
-                << "Сумма вероятностей не равна 0!" << endl
-                << "Введите пары заново";
-            _getch();
-        }
-        system("cls");
-    }
-    while (probabilitySum != 1);
-    mathExpectation = solveMathExpectation(x, arraySize);                                   //Просчёт математического ожидания
-    dispersion = solveSquareMathExpectation(x, arraySize)-mathExpectation*mathExpectation;  //Просчёт дисперсии
-    cout
-        << "Математическое ожидание = " << setprecision(numeric_limits<double>::max_digits10) << mathExpectation << endl
-        << "Дисперсия = " << setprecision(numeric_limits<double>::max_digits10) << dispersion << endl
-        << "Стандартное отклонение = ";
-    if(dispersion >= 0) cout << setprecision(numeric_limits<double>::max_digits10) << sqrt(dispersion);
-    else cout << "NuN";
     
+    double **x = createArray(arraySize);    //Создание двумерного массива
+    enterArray(x, arraySize);               //Ввод двумерного массива
+    cout << "Дисперсия = " << setprecision(numeric_limits<double>::max_digits10) << solveSquareMathExpectation(x, arraySize)-solveMathExpectation(x, arraySize)*solveMathExpectation(x, arraySize) << endl;
+    deleteArray(x);                         //Удаление двумерного массива
+
     _getch();   //Не даёт сразу выйти в меню
     system("cls");
 }

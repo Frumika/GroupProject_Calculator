@@ -5,6 +5,7 @@
 
 using namespace std;
 
+/* Калькулятор вероятности */
 void runProbability()
 {
     int precision;

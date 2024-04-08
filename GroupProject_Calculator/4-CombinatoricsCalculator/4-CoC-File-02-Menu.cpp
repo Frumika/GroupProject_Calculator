@@ -75,7 +75,7 @@ void displayCombinatoricsMenu()
             }
     }
     //Перезапуск калькулятора
-    runCombinatoricsCalculator();   //А может всё-таки через do/while???
+    runCombinatoricsCalculator();
 }
 
 void runCombinatoricsCalculator()
