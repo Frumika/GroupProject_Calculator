@@ -336,6 +336,9 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="2-FractionCalculator\2-FrC-File-03-Addition-subtraction.cpp" />
+    <ClCompile Include="2-FractionCalculator\2-FrC-File-04-multiplication-division.cpp" />
+    <ClCompile Include="2-FractionCalculator\2-FrC-File-05-comparison-reduction-decimal-number.cpp" />
     <ClCompile Include="3-FunctionCalculator\3-FuC-File-02-Menu.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
