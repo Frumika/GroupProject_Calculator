@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "задача-6-PolynomialCalculator",
+      "appliesTo": "GroupProject_Calculator/6-PolynomialCalculator/",
+      "type": "launch"
+    }
+  ]
+}

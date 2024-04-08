@@ -1446,6 +1446,8 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="6-PolynomialCalculator\6-PoC-File-03-Func.cpp" />
+    <ClCompile Include="6-PolynomialCalculator\6-PoC-File-04-Prep.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />
