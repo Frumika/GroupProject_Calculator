@@ -9,10 +9,11 @@
  */
 double* findDeterminant(Matrix* matrixA)
 {
+    int* swap = new int{0};
     double* determinant = new double{1};
     Matrix* matrixB = new Matrix;
 
-    matrixB = createStepMatrix(matrixA);
+    matrixB = createStepMatrix(matrixA, swap);
 
     for (int i = 0; i < *matrixB->n; i++)
     {
@@ -21,6 +22,7 @@ double* findDeterminant(Matrix* matrixA)
     clearMatrix(matrixB);
 
     if (*determinant == -0) *determinant = 0;
+    if (*determinant != 0 && *swap % 2 != 0) *determinant = -*determinant;
 
     return determinant;
 }
