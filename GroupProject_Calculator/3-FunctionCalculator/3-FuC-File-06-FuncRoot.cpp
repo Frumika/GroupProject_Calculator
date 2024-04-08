@@ -1,13 +1,23 @@
-﻿#include "3-FuC-File-01-Header.h"
+﻿#include <windows.h>
+
+#include "3-FuC-File-01-Header.h"
 
 void FindRoot(double a, double b, double eps, function<double(double)> ChosenFunc)
 {
     double mid = (b + a) / 2;
     int iter = 0;
 
+    if (goodFunc == 1)
+    {
+        if (wasMade == 1)
+            cout << "| Корень уравнения: " << root;
+        else cout << "| Нет корней";
+        return;
+    }
+    
     if (ChosenFunc(a) * ChosenFunc(b) > 0)
     {
-        cout << "ОШИБКА: Функция имеет одинаковые знаки на концах отрезков.." << endl;
+        cout << "| ОШИБКА: Функция имеет одинаковые знаки на концах отрезков..";
         return;
     }
     
@@ -22,34 +32,44 @@ void FindRoot(double a, double b, double eps, function<double(double)> ChosenFun
     }
 
     if (iter >= 3000)
-        cout << "ОШИБКА: RunTimeError\n";
+        cout << "| ОШИБКА: RunTimeError";
     else
-        cout << "Корень уравнения: " << mid << endl;
+        cout << "| Корень уравнения: " << mid;
 }
 
 void runFuncRootCalc(function<double(double)> ChosenFunc)
 {
     double st, en;
-    double eps = 0.0001;
+    double eps = 0.000001;
 
+    cout
+    << "|------------------------------------------------|\n"
+    << "|        >>> Поиск корня на отрезке <<<          |\n"
+    << "|------------------------------------------------|\n" ;
+    
     do
     {
-        cout << "Введите границы отрезка: "; cin >> st >> en;
+        cout << "| Введите границы отрезка: "; cin >> st >> en;
     } while (st > en);
 
     FindRoot(st, en, eps, ChosenFunc);
 
-    int ans;
-    cout << "\nПродолжить работу с текущей функцией? ";
+
+    char ans;
+    cout << "\n| Продолжить работу с текущей функцией (0/1)? ";
 
     do
     {
-        cin >> ans;
-        if (ans != 0 || ans != 1) cout << "Ошибка ввода";
+        ans = _getch();
+        if (ans != '0' || ans != '1')
+            cout
+            << "\n|------------------------------------------------|\n"
+            << "|            >>> Ошбика ввода <<<                |\n"
+            << "|------------------------------------------------|\n" ;;
     }
-    while (ans != 0 && ans != 1);
+    while (ans != '0' && ans != '1');
     
-    if (ans == 1)
+    if (ans == '1')
     {
         system("cls");
         runSecondFuncMenu(ChosenFunc);

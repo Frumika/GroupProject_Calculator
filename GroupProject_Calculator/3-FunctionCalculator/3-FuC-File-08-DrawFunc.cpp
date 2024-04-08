@@ -14,9 +14,14 @@ void DrawFunc(function<double (double)> ChosenFunc)
     SDL_Event event;
     TTF_Font *font = NULL;
 
+    cout
+    << "|------------------------------------------------|\n"
+    << "|       >>> Рисование графика функции <<<        |\n"
+    << "|------------------------------------------------|\n";
+    
     if (SDL_Init(SDL_INIT_VIDEO) != 0) // Инициализация SDL
     {
-        cout << "Ошибка инициализации SDL: \n" << SDL_GetError();
+        cout << "| Ошибка инициализации SDL: " << SDL_GetError() << endl;
         
         SDL_Quit();
         return;
@@ -24,17 +29,17 @@ void DrawFunc(function<double (double)> ChosenFunc)
 
     if (TTF_Init() != 0) //Инициализация SDLttf
     {
-        cout << "Ошибка инициализации SDL_ttf: \n" << TTF_GetError();
+        cout << "| Ошибка инициализации SDL_ttf: " << TTF_GetError() << endl;
         
         TTF_Quit();
         return;
     }
 
-    font = TTF_OpenFont("D:/Project/GroupProject_Calculator/x64/Debug/arial.ttf", MAX_FONT_SIZE);
+    font = TTF_OpenFont("D:/My_C++_projects/GroupProject_Calculator/x64/Debug/arial.ttf", MAX_FONT_SIZE);
 
     if (!font)
     {
-        cout << "Ошибка инициализации SDL_ttf: \n" << TTF_GetError();
+        cout << "| Ошибка инициализации SDL_ttf: " << TTF_GetError() << endl;
         
         TTF_Quit();
         SDL_Quit();
@@ -45,7 +50,7 @@ void DrawFunc(function<double (double)> ChosenFunc)
 
     if (window == NULL)
     {
-        cout << "Ошибка при создании окна: \n" << SDL_GetError();
+        cout << "| Ошибка при создании окна: " << SDL_GetError() << endl;
         
         TTF_CloseFont(font);
         TTF_Quit();
@@ -58,7 +63,7 @@ void DrawFunc(function<double (double)> ChosenFunc)
     {
         SDL_DestroyWindow(window);
         
-        cout << "Ошибка при создании рендера: \n" << SDL_GetError();
+        cout << "| Ошибка при создании рендера: " << SDL_GetError() << endl;
         
         TTF_CloseFont(font);
         
@@ -68,6 +73,11 @@ void DrawFunc(function<double (double)> ChosenFunc)
     }
 
     renderGraph(renderer, ChosenFunc, font, calculateFontSize(scaleX), scaleX, scaleY, offsetX, offsetY);
+
+    cout
+    << "|------------------------------------------------|\n"
+    << "|            >>> График отрисован <<<            |\n"
+    << "|------------------------------------------------|\n";
 
     bool quit = false;
 
@@ -168,21 +178,27 @@ void DrawFunc(function<double (double)> ChosenFunc)
 
     TTF_Quit();
     SDL_Quit();
-
-    bool ans;
-
-    cout << "Окно было закрыто!";
     
-    cout << "\nПродолжить работу с текущей функцией (0/1)? ";
+    cout
+    << "|------------------------------------------------|\n"
+    << "|              >>> Окно закрыто <<<              |\n"
+    << "|------------------------------------------------|\n";
+    
+    char ans;
+    cout << "| Продолжить работу с текущей функцией (0/1)? ";
 
     do
     {
-        cin >> ans;
-        if (ans != 0 || ans != 1) cout << "Ошибка ввода";
+        ans = _getch();
+        if (ans != '0' || ans != '1')
+            cout
+            << "\n|------------------------------------------------|\n"
+            << "|            >>> Ошбика ввода <<<                |\n"
+            << "|------------------------------------------------|\n" ;;
     }
-    while (ans != 0 && ans != 1);
+    while (ans != '0' && ans != '1');
     
-    if (ans == 1)
+    if (ans == '1')
     {
         system("cls");
         runSecondFuncMenu(ChosenFunc);
