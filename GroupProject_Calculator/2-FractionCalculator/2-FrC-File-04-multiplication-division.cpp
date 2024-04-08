@@ -72,6 +72,11 @@ void Division_of_fractions()
             flag=5;
             printf(" %d / %d : %d / %d = %d / %d\n",nominator1,denominator1,nominator2,denominator2,-1*result[0],-1*result[1]);
         }
+        if(undernum==1)
+        {
+            flag=6;
+            printf(" %d / %d : %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,result[0]);
+        }
         if(flag==4)
         {
             printf(" %d / %d : %d / %d = %d / %d\n",nominator1,denominator1,nominator2,denominator2,result[0],result[1]);
