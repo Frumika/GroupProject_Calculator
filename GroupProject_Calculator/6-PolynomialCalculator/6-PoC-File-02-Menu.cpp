@@ -50,13 +50,13 @@ void runPolynomialCalculator()
     while (cond == false);*/
     t=but-'0';
         if (t > 0 && t < 5) {
-            cout << "\nВведите первый полином \n";
+            cout << "\nВведите первый полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
             Poly* pol1 = GetPolynom(cin);
             NormPolynom(pol1);
             cout << "Многочлен 1\n";
             PrintPolynom(pol1);
             cout << "\n";
-            cout << "Введите второй полином \n";
+            cout << "Введите второй полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
             Poly* pol2 = GetPolynom(cin);
             NormPolynom(pol2);
             cout << "\nМногочлен 2\n";
@@ -71,7 +71,7 @@ void runPolynomialCalculator()
             }
         }//считывается 2 полинома
         if (t > 4 && t < 7) {
-            cout << "\nВведите полином \n";
+            cout << "\nВведите полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
             Poly* pol1 = GetPolynom(cin);
             NormPolynom(pol1);
             cout << "Полином\n";
