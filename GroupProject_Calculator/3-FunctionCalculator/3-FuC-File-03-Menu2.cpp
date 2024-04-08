@@ -7,18 +7,20 @@ void runSecondFuncMenu(function<double(double)> ChosenFunc)
 {
     char select;
     bool cond;
+
+    system("cls");
     
     cout
-    << "|-------------------------------------------------|\n"
-    << "|              >>> Выбор действия <<<             |\n"
-    << "|-------------------------------------------------|\n" 
-    << "| 1. Вычисление определенного                     |\n"
-       "|    интеграла на отрезке                         |\n" 
-    << "| 2. Построить график функции                     |\n" 
-    << "| 3. Поиск корня на отрезке                       |\n" 
-    << "| 4. Поиск экстремумов на отрезке                 |\n" 
-    << "| 0. Назад                                        |\n" 
-    << "|-------------------------------------------------|\n";
+    << "|------------------------------------------------|\n"
+    << "|              >>> Выбор действия <<<            |\n"
+    << "|------------------------------------------------|\n" 
+    << "| 1. Вычисление определенного                    |\n"
+       "|    интеграла на отрезке                        |\n" 
+    << "| 2. Построить график функции                    |\n" 
+    << "| 3. Поиск корня на отрезке                      |\n" 
+    << "| 4. Поиск экстремумов на отрезке                |\n" 
+    << "| 0. Назад                                       |\n" 
+    << "|------------------------------------------------|\n";
 
     do
     {
@@ -36,27 +38,27 @@ void runSecondFuncMenu(function<double(double)> ChosenFunc)
 
     switch (select)
     {
-        case '1':
-            {
-                runDefIntegral(ChosenFunc);
-            }
+    case '1':
+        {
+            runDefIntegral(ChosenFunc);
+        }
         break;
-        case '2':
-            {
-                DrawFunc(ChosenFunc);
-            }
+    case '2':
+        {
+            DrawFunc(ChosenFunc);
+        }
         break;
-        case '3':
-            {
-                runFuncRootCalc(ChosenFunc);
-            }
+    case '3':
+        {
+            runFuncRootCalc(ChosenFunc);
+        }
         break;
-        case '4':
-            {
-                runExtremumCalc(ChosenFunc);
-            }
+    case '4':
+        {
+            runExtremumCalc(ChosenFunc);
+        }
         break;
-        default:
-            runFunctionCalculator();
+    default:
+        runFunctionCalculator();
     }
 }

@@ -21,9 +21,14 @@ void runDefIntegral(function<double (double)> ChosenFunc)
     double st = 1, en = 0;
     int n = 1000;
     
+    cout
+    << "|------------------------------------------------|\n"
+    << "|   >>> Определенный интеграл на отрезке <<<     |\n"
+    << "|------------------------------------------------|\n" ;
+    
     do
     {
-        cout << "Введите границы отрезка: "; cin >> st >> en;
+        cout << "| Введите границы отрезка: "; cin >> st >> en;
     } while (st >= en);
 
     double e = 0.0001;
@@ -37,19 +42,23 @@ void runDefIntegral(function<double (double)> ChosenFunc)
         diff = fabs(IntegralCalc(st, en, k * i, ChosenFunc) - IntegralCalc(st, en, k * (i + 1), ChosenFunc));
     } while (diff > e);
 
-    cout <<  IntegralCalc(st, en, k * (i + 1), ChosenFunc);
+    cout << "| Значение интеграла: " <<IntegralCalc(st, en, k * (i + 1), ChosenFunc);
 
-    bool ans;
-    cout << "\nПродолжить работу с текущей функцией? ";
+    char ans;
+    cout << "\n| Продолжить работу с текущей функцией (0/1)? ";
 
     do
     {
-        cin >> ans;
-        if (ans != 0 || ans != 1) cout << "Ошибка ввода";
+        ans = _getch();
+        if (ans != '0' || ans != '1')
+            cout
+            << "\n|------------------------------------------------|\n"
+            << "|            >>> Ошбика ввода <<<                |\n"
+            << "|------------------------------------------------|\n" ;;
     }
-    while (ans != 0 && ans != 1);
+    while (ans != '0' && ans != '1');
     
-    if (ans == 1)
+    if (ans == '1')
     {
         system("cls");
         runSecondFuncMenu(ChosenFunc);
