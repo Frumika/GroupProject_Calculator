@@ -27,13 +27,17 @@ void swapString(Matrix* matrixA, int* i, int* j)
  * Входящая матрица видоизменяется, но не удаляется.
  * Функция не возвращает занчений.
  */
-void multiplicationMatrixString(Matrix* matrixA, int* i, int* j)
+void multiplicationMatrixString(Matrix* matrixA, int* i, int* j, int* swap)
 {
     double* multiplier = new double;
 
     if (matrixA->matrix[*i][*i] == 0)
     {
-        if (matrixA->matrix[*j][*i] != 0) swapString(matrixA, i, j);
+        if (matrixA->matrix[*j][*i] != 0)
+        {
+            swapString(matrixA, i, j);
+            *swap = *swap + 1;
+        }
 
         else
         {
@@ -42,6 +46,7 @@ void multiplicationMatrixString(Matrix* matrixA, int* i, int* j)
                 if (matrixA->matrix[new_j][*i] != 0)
                 {
                     swapString(matrixA, i, &new_j);
+                    *swap = *swap + 1;
                     break;
                 }
             }
@@ -70,7 +75,7 @@ void multiplicationMatrixString(Matrix* matrixA, int* i, int* j)
  * Входящая матрица (matrixA) не удаляется.
  * Функция возвращает указатель на новую матрицу (matrixB)
  */
-Matrix* createStepMatrix(Matrix* matrixA)
+Matrix* createStepMatrix(Matrix* matrixA, int* swap)
 {
     Matrix* matrixB = new Matrix;
 
@@ -80,7 +85,7 @@ Matrix* createStepMatrix(Matrix* matrixA)
     {
         for (int j = i + 1; j < *matrixB->n; j++)
         {
-            multiplicationMatrixString(matrixB, &i, &j);
+            multiplicationMatrixString(matrixB, &i, &j, swap);
         }
     }
     return matrixB;

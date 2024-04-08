@@ -9,9 +9,9 @@
 Matrix* findInverseMatrix(Matrix* matrixA, double* determinant)
 {
     Matrix* matrixB = new Matrix;
-    double multiplier;
+    double* multiplier = new double;
 
-    multiplier = 1 / *determinant;
+    *multiplier = 1 / *determinant;
     delete determinant;
 
     matrixB->matrix = new double*[*matrixA->n];
@@ -32,7 +32,7 @@ Matrix* findInverseMatrix(Matrix* matrixA, double* determinant)
 
     matrixB = transpositionMatrix(matrixB);
 
-    multiplicationMatrix(matrixB, &multiplier);
+    multiplicationMatrix(matrixB, multiplier);
 
     return matrixB;
 }
