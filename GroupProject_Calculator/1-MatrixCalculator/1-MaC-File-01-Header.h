@@ -21,7 +21,7 @@ void multiplicationMatrix(Matrix* matrixA, double* number);
 
 Matrix* transpositionMatrix(Matrix* matrixA);
 
-Matrix* createStepMatrix(Matrix* matrixA, int* swap);
+Matrix* createStepMatrix(Matrix* matrixA);
 
 double* findDeterminant(Matrix* matrixA);
 
