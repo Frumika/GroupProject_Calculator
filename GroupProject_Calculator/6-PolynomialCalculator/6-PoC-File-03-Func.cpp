@@ -5,8 +5,8 @@ Poly* UmnPolinomNaChislo(Poly* pol1) {
     double chislo;
     cout << "Введите число, на которое хотите умножить полином\n"; cin >> chislo;
     for (Item& p1 : *pol1) {
-        Item itm = make_pair(p1.first, p1.second * chislo);
-        if (itm.second != 0)
+        Item itm = make_pair(p1.second, p1.first * chislo);
+        if (itm.first != 0)
             pol->emplace_back(itm);
     }
     NormPolynom(pol);
@@ -15,9 +15,9 @@ Poly* UmnPolinomNaChislo(Poly* pol1) {
 Poly* ProizPolynom(Poly* pol1) {
     Poly* pol = new Poly;
     for (Item& p1 : *pol1) {
-        if (p1.first > 0) {
-            Item itm = make_pair(p1.first - 1, p1.second * p1.first);
-            if (itm.second != 0)
+        if (p1.second > 0) {
+            Item itm = make_pair(p1.second * p1.first,p1.second - 1 );
+            if (itm.first != 0)
                 pol->emplace_back(itm);
         }
     }
@@ -26,8 +26,8 @@ Poly* ProizPolynom(Poly* pol1) {
 }//производная первого порядка
 Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
     setlocale(LC_ALL, "Russian");
-    const double pwr1 = pol1->front().first;
-    const double pwr2 = pol2->front().first;
+    const double pwr1 = pol1->front().second;
+    const double pwr2 = pol2->front().second;
     if (pwr1 < pwr2) { system("cls");cout << "\n Попробуйте ввести полиномы в другом порядке или выберите другой номер задачи \n\n"; return 0;}
     if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){cout<<"Напоминаем: операция деления полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
@@ -39,7 +39,7 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
         // Вычисляем и размещаем коэффициент частного
         double c = cf1[i] / cf2[0];
         int k = pwr1 - i - pwr2;
-        pol->emplace_back(make_pair(k, c));
+        pol->emplace_back(make_pair(c, k));
         // Пересчитываем коэффициенты остатка
         cf1[i] = 0;
         for (unsigned j = 1; j < cf2.size(); ++j)
@@ -49,7 +49,7 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
     double eps = numeric_limits<double>::epsilon();
     for (unsigned i = 1; i < cf1.size(); ++i) {
         if (abs(cf1[i]) > eps)
-            (*rem)->emplace_back(make_pair(pwr1 - i, cf1[i]));
+            (*rem)->emplace_back(make_pair( cf1[i],pwr1 - i));
     }
     NormPolynom(pol);
     NormPolynom(*rem);
@@ -57,16 +57,16 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
 }// деление полиномов
 
 Poly* AddPolynom(Poly* pol1, Poly* pol2) {
-    const double pwr1 = pol1->front().first;
-    const double pwr2 = pol2->front().first;
+    const double pwr1 = pol1->front().second;
+    const double pwr2 = pol2->front().second;
     if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){system("cls");cout<<"Напоминаем: операция сложения полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
-    double pwr = max(pol1->front().first, pol2->front().first);
+    double pwr = max(pol1->front().second, pol2->front().second);
     vector<double> cf1 = AllCoef(pol1, pwr);
     vector<double> cf2 = AllCoef(pol2, pwr);
     for (int i = 0; i <= pwr; ++i) {
-        Item itm = make_pair(pwr - i, cf1[i] + cf2[i]);
-        if (itm.second != 0)
+        Item itm = make_pair(cf1[i] + cf2[i],pwr - i);
+        if (itm.first != 0)
             pol->emplace_back(itm);
     }
     NormPolynom(pol);
@@ -74,16 +74,16 @@ Poly* AddPolynom(Poly* pol1, Poly* pol2) {
 }//сложение полиномов
 
 Poly* SubtPolynom(Poly* pol1, Poly* pol2) {
-    const double pwr1 = pol1->front().first;
-    const double pwr2 = pol2->front().first;
+    const double pwr1 = pol1->front().second;
+    const double pwr2 = pol2->front().second;
     if ((abs(int(pwr1))!=pwr1)&&(abs(int(pwr2))!=pwr2)){system("cls");cout<<"Напоминаем: операция вычитания полиномов доступна только для положительных целых показателей степени";return 0;}
     Poly* pol = new Poly;
-    int pwr = max(pol1->front().first, pol2->front().first);
+    int pwr = max(pol1->front().second, pol2->front().second);
     vector<double> cf1 = AllCoef(pol1, pwr);
     vector<double> cf2 = AllCoef(pol2, pwr);
     for (int i = 0; i <= pwr; ++i) {
-        Item itm = make_pair(pwr - i, cf1[i] - cf2[i]);
-        if (itm.second != 0)
+        Item itm = make_pair(cf1[i] - cf2[i],pwr - i );
+        if (itm.first != 0)
             pol->emplace_back(itm);
     }
     NormPolynom(pol);
@@ -94,8 +94,8 @@ Poly* MultPolynom(Poly* pol1, Poly* pol2) {
     Poly* pol = new Poly;
     for (Item& p1 : *pol1) {
         for (Item& p2 : *pol2) {
-            Item itm = make_pair(p1.first + p2.first, p1.second * p2.second);
-            if (itm.second != 0)
+            Item itm = make_pair(p1.first * p2.first,p1.second + p2.second);
+            if (itm.first != 0)
                 pol->emplace_back(itm);
         }
     }
@@ -110,10 +110,10 @@ void Disclaimer()
     << "|----------------------------------------------------|" << endl
     << "| >>Ввод полинома осуществляется следующим образом:  |" << endl
     << "|   Для каждого члена полинома вводится пара чисел,  |" << endl
-    << "|   где первое число- степень переменной х,          |" << endl
-    << "|   а второе-коэффициент перед переменной.           |" << endl
+    << "|   где первое число- коэффициент перед переменной   |" << endl
+    << "|   а второе-степень переменной х                    |" << endl
     << "|   Пары чисел разделяются знаком ';'                |" << endl
-    << "| >>Например, полином  3*x^2+2 вводится так: 2 3;0 2 |" << endl
+    << "| >>Например, полином  3*x^2+2 вводится так: 3 2;2 0 |" << endl
     << "|   Ввод полинома завершается нажатием клавиши Enter |" << endl
     << "|>>Калькулятор работает с целыми степенями для задач:|"<<endl
     << "|   сложение, деление, вычитание полиномов           |" << endl

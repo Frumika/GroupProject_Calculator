@@ -62,13 +62,13 @@ void runPolynomialCalculator()
         
         if (t > 0 && t < 5) {
             Disclaimer();
-            cout << "\nВведите первый полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
+            cout << "\nВведите первый полином (коэффициент1 степень1; коэффициент2 степень2...) \n";
             Poly* pol1 = GetPolynom(cin);
             NormPolynom(pol1);
             cout << "Многочлен 1\n";
             PrintPolynom(pol1);
             cout << "\n";
-            cout << "Введите второй полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
+            cout << "Введите второй полином (коэффициент1 степень1; коэффициент2 степень2...) \n";
             Poly* pol2 = GetPolynom(cin);
             NormPolynom(pol2);
             cout << "\nМногочлен 2\n";
@@ -88,7 +88,7 @@ void runPolynomialCalculator()
         }//считывается 2 полинома
         if (t > 4 && t < 7) {
             Disclaimer();
-            cout << "\nВведите полином (степень1 коэффициент1; степень2 коэффициент2...) \n";
+            cout << "\nВведите полином (коэффициент1 степень1; коэффициент2 степень2...) \n";
             Poly* pol1 = GetPolynom(cin);
             NormPolynom(pol1);
             cout << "Полином:\n";
@@ -99,7 +99,7 @@ void runPolynomialCalculator()
             case 5:
                 pol4 = UmnPolinomNaChislo(pol1); cout << "\nРезультат\n"; PrintPolynom(pol4); cout<<"\n"; break;
             case 6:
-                pol4 = ProizPolynom(pol1); cout << "\nРезультат\n"; cout<<"\n";PrintPolynom(pol4); break;
+                pol4 = ProizPolynom(pol1); cout << "\nРезультат\n"; PrintPolynom(pol4); cout<<"\n";break;
             }
         }//считывается 1 полином
     }
