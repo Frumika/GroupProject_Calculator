@@ -23,3 +23,4 @@ Poly* SubtPolynom(Poly* pol1, Poly* pol2);
 Poly* MultPolynom(Poly* pol1, Poly* pol2);
 Poly* GetPolynom(istream& in);
 void runPolynomialCalculator();
+void Disclaimer();

@@ -26,7 +26,7 @@ void PrintPolynom(Poly* pol) {
     }
     bool firstTime = true;
     for (Item& p : *pol) {
-        if (!firstTime)
+        if (!firstTime && p.second>0)
             cout << "+";
         if (p.second!=0)
         {
