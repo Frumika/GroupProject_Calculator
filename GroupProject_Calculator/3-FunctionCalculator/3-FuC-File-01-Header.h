@@ -15,7 +15,7 @@ using namespace std;
 
 #define WIDTH 800 
 #define HEIGHT 600
-#define MAX_FONT_SIZE 20
+#define MAX_FONT_SIZE 16
 
 extern bool wasMade;
 extern double root;
