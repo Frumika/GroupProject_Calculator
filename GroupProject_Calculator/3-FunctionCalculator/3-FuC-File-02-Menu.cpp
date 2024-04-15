@@ -3,7 +3,7 @@
 
 double root = 0;
 bool wasMade = false;
-bool goodFunc = false;
+bool goodFunc = 0;
 
 void runFunctionCalculator()
 {
@@ -88,14 +88,16 @@ void runFunctionCalculator()
                 };
 
                 runSecondFuncMenu(ChosenFunc);
+                break;
             }
-            break;
         case '2':
             {
                 double a,b,c;
                 cout
                 << "|------------------------------------------------|" << endl
-                << "|     >>> Степенная функция a * x^b + c <<<      |" << endl
+                << "|           >>> Степенная функция <<<            |" << endl
+                << "|------------------------------------------------|" << endl
+                << "|                  a * x^b + c                   |" << endl
                 << "|------------------------------------------------|" << endl;
                 
                 do
@@ -111,22 +113,24 @@ void runFunctionCalculator()
                 };
 
                 runSecondFuncMenu(ChosenFunc);
+                break;
             }
-            break;
         case '3':
             {
                 double a,b,c,d;
 
                 cout
                 << "|------------------------------------------------|" << endl
-                << "|  >> Показательная функция a * b^(c * x) + d << |" << endl
+                << "|          >>> Показательная функция <<<         |" << endl
+                << "|------------------------------------------------|" << endl
+                << "|                a * b^(c * x) + d               |" << endl
                 << "|------------------------------------------------|" << endl;
                 
                 do
                 {
                     cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
                 }
-                while (a == 0 || c == 0);
+                while (a == 0 || c == 0 || b == 0 || b == 1);
                 
                 auto ChosenFunc = [&a, &b, &c, &d](double x)
                 {
@@ -134,15 +138,17 @@ void runFunctionCalculator()
                 };
             
                 runSecondFuncMenu(ChosenFunc);
+                break;
             }
-            break;
             case '4':
                 {
                     double a,b,c;
 
                     cout
                     << "|------------------------------------------------|" << endl
-                    << "|>> Логарифмическая функция a * log(b * x) + c <<|" << endl
+                    << "|        >>> Логарифмическая функция  <<<        |" << endl
+                    << "|------------------------------------------------|" << endl
+                    << "|               a * log(b * x) + c               |" << endl
                     << "|------------------------------------------------|" << endl;
                     
                     do
@@ -158,20 +164,22 @@ void runFunctionCalculator()
 
                     system("cls");
                     runSecondFuncMenu(ChosenFunc);
+                    break;
                 }
-            break;
             case '5':
                 {
                     double a,b,c,d;
 
                     cout
                     << "|------------------------------------------------|" << endl
-                    << "|   >>> Синусоида a * sin(b * x + c) + d <<<     |" << endl
+                    << "|               >>> Синусоида <<<                |" << endl
+                    << "|------------------------------------------------|" << endl
+                    << "|             a * sin(b * x + c) + d             |" << endl
                     << "|------------------------------------------------|" << endl;
                     
                     cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
 
-                    goodFunc = true;
+                    goodFunc = 1;
 
                     if ((-d/a <= 1 && -d/a >= -1))                    
                         root = (asin(-d/a) - c) / b;
@@ -183,15 +191,17 @@ void runFunctionCalculator()
                     };
 
                     runSecondFuncMenu(ChosenFunc);
+                    break;
                 }
-            break;
             case '6':
                 {
                     double a,b,c,d;
 
                     cout
                     << "|------------------------------------------------|" << endl
-                    << "|   >>> Косинусоида a * cos(b * x + c) + d <<<   |" << endl
+                    << "|                >>> Косинусоида <<<             |" << endl
+                    << "|------------------------------------------------|" << endl
+                    << "|               a * cos(b * x + c) + d           |" << endl
                     << "|------------------------------------------------|" << endl;
                     
                     cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
@@ -208,8 +218,8 @@ void runFunctionCalculator()
                     };
 
                     runSecondFuncMenu(ChosenFunc);
+                    break;
                 }
-            break;
             default:
                 runMainMenu();
         }
