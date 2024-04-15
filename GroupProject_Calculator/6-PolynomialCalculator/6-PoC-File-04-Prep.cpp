@@ -2,7 +2,7 @@
 vector<double> AllCoef(const Poly* pol, double pwr) {
     vector<double> coef(pwr + 1, 0.0);
     for (const Item& itm : *pol)
-        coef[pwr - itm.first] = itm.second;
+        coef[pwr - itm.second] = itm.first;
     return coef;
 }
 Poly* GetPolynom(istream& in) {
@@ -13,9 +13,9 @@ Poly* GetPolynom(istream& in) {
     istringstream elm1(line);
     while (getline(elm1, str1, ';')) {
         istringstream elm2(str1);
-        elm2 >> pwr;
         elm2 >> cft;
-        pol->emplace_back(make_pair(pwr, cft));
+        elm2 >> pwr;
+        pol->emplace_back(make_pair(cft,pwr));
     }
     return pol;
 }
@@ -26,12 +26,12 @@ void PrintPolynom(Poly* pol) {
     }
     bool firstTime = true;
     for (Item& p : *pol) {
-        if (!firstTime)
+        if (!firstTime && p.first>0)
             cout << "+";
-        if (p.second!=0)
+        if (p.first!=0)
         {
-            if (p.first==0){ cout << p.second;}
-            else{cout << p.second << "*x^" << p.first;}
+            if (p.second==0){ cout << p.first;}
+            else{cout << p.first << "*x^" << p.second;}
         }
         firstTime = false;
     }
@@ -45,22 +45,22 @@ void NormPolynom(Poly* pol) {
     auto bgn = begin(*pol);
     while (bgn != end(*pol)) {
         auto p = *bgn;
-        double pwr = p.first;
-        double cft = p.second;
+        double pwr = p.second;
+        double cft = p.first;
         auto nxt = bgn; ++nxt;
         while (nxt != end(*pol)) {
             auto q = *nxt;
-            if (q.first != pwr)
+            if (q.second != pwr)
                 ++nxt;
             else {
-                cft += q.second;
+                cft += q.first;
                 nxt = pol->erase(nxt);
             }
         }
-        if (cft == p.second)
+        if (cft == p.first)
             ++bgn;
         else {
-            p.second = cft;
+            p.first = cft;
             auto del = bgn;
             bgn = pol->insert(bgn, p);
             pol->erase(del);;
@@ -68,10 +68,10 @@ void NormPolynom(Poly* pol) {
     }
     // Упорядочить по убыванию степеней
     pol->sort([](Item& p1, Item& p2)
-        { return p1.first > p2.first; });
+        { return p1.second > p2.second; });
     // Удалить старшие нули
     bgn = begin(*pol);
-    while (bgn != end(*pol) && (*bgn).second == 0) {
+    while (bgn != end(*pol) && (*bgn).first == 0) {
         pol->erase(bgn);
         bgn = begin(*pol);
     }
