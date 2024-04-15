@@ -4,6 +4,10 @@
 
 void Multiplication_of_fractions()
 {
+    printf("|----------------------------------------------|\n");
+    printf("|           >>> Умножение дробей <<<           |\n");
+    printf("|----------------------------------------------|\n");
+    
     int uppernum,undernum;
     int denominator1,nominator1; // знаменатель и числитель для 1 дроби
     int denominator2,nominator2; // для 2 дроби
@@ -18,29 +22,38 @@ void Multiplication_of_fractions()
         if(undernum==uppernum)
         {
             flag=1;
-            printf(" %d / %d * %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,1);
+            printf("| Ответ: | %d / %d * %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,1);
+            printf("\n");
         }
         if((undernum==(-1*uppernum) || uppernum==(-1*undernum)))
         {
             flag=2;
-            printf(" %d / %d * %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,-1);
+            printf("| Ответ: | %d / %d * %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,-1);
+            printf("\n");
         }
         if(uppernum==0)
         {
             flag=3;
-            printf(" %d / %d * %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,0);
+            printf("| Ответ: | %d / %d * %d / %d = %d |",nominator1,denominator1,nominator2,denominator2,0);
+            printf("\n");
         }
         if(flag==4)
         {
-            printf(" %d / %d * %d / %d = %d / %d\n",nominator1,denominator1,nominator2,denominator2,result[0],result[1]);
+            printf("| Ответ: | %d / %d * %d / %d = %d / %d |\n",nominator1,denominator1,nominator2,denominator2,result[0],result[1]);
+            printf("\n");
         }
     }
     else{printf("Ошибка деления на ноль!\n");}
     getchar();
+    runFractionCalculator();
 }
 ////////////////////////////
 void Division_of_fractions()
 {
+    printf("|----------------------------------------------|\n");
+    printf("|            >>> Деление дробей <<<            |\n");
+    printf("|----------------------------------------------|\n");
+    
     int uppernum,undernum;
     int denominator1,nominator1; // знаменатель и числитель для 1 дроби
     int denominator2,nominator2; // для 2 дроби
@@ -55,33 +68,40 @@ void Division_of_fractions()
         if(undernum==uppernum)
         {
             flag=1;
-            printf(" %d / %d : %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,1);
+            printf("| Ответ: | %d / %d : %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,1);
+            printf("\n");
         }
         if((undernum==(-1*uppernum) || uppernum==(-1*undernum)))
         {
             flag=2;
-            printf(" %d / %d : %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,-1);
+            printf("| Ответ: | %d / %d : %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,-1);
+            printf("\n");
         }
         if(uppernum==0)
         {
             flag=3;
-            printf(" %d / %d : %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,0);
+            printf("| Ответ: | %d / %d : %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,0);
+            printf("\n");
         }
         if(undernum<0 && uppernum<0)
         {
             flag=5;
-            printf(" %d / %d : %d / %d = %d / %d\n",nominator1,denominator1,nominator2,denominator2,-1*result[0],-1*result[1]);
+            printf("| Ответ: | %d / %d : %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,-1*result[0],-1*result[1]);
+            printf("\n");
         }
         if(undernum==1)
         {
             flag=6;
-            printf(" %d / %d : %d / %d = %d\n",nominator1,denominator1,nominator2,denominator2,result[0]);
+            printf("| Ответ: | %d / %d : %d / %d = %d |\n",nominator1,denominator1,nominator2,denominator2,result[0]);
+            printf("\n");
         }
         if(flag==4)
         {
-            printf(" %d / %d : %d / %d = %d / %d\n",nominator1,denominator1,nominator2,denominator2,result[0],result[1]);
+            printf("| Ответ: | %d / %d : %d / %d = %d / %d |\n",nominator1,denominator1,nominator2,denominator2,result[0],result[1]);
+            printf("\n");
         }
     }
     else{printf("Ошибка деления на ноль!\n");}
     getchar();
+    runFractionCalculator();
 }
