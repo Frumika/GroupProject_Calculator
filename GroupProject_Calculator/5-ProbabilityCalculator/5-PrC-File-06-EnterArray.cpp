@@ -12,19 +12,22 @@ void enterArray(double **x, int arraySize)
     //Ввод пар значений + вероятностей
     do
     {
-        cout << "Введите " << arraySize << " пары значений + вероятности: ";
+        cout << "Введите " << arraySize << " величин в виде [Значение + Его вероятность]: " << endl;
         for(int column = 0; column < arraySize; column++)
         {
             double probability;
+            cout << column+1 << " Величина = ";
             cin >> x[0][column] >> probability;
             x[1][column] = probability;
             probabilitySum += probability;
+            if(probabilitySum > 1) break;
         }
         if(probabilitySum != 1)
         {
             cout
-                << "Сумма вероятностей не равна 0!" << endl
-                << "Введите пары заново";
+                << endl
+                << "Сумма вероятностей не равна 1!" << endl
+                << "Введите пары заново!";
             _getch();
         }
         system("cls");

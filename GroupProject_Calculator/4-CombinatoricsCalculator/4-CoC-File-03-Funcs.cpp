@@ -13,5 +13,5 @@ double pow(int n, int m)
 {
     double k = 1;
     for(; m > 0; k *= n, m--);
-    return n;
+    return k;
 }
