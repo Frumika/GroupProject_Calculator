@@ -5,9 +5,9 @@
 
 void Comparing_fractions()
 {
-    printf("|----------------------------------------------|\n");
-    printf("|           >>> Сраввнение дробей <<<          |\n");
-    printf("|----------------------------------------------|\n");
+    printf("|------------------------------------------------|\n");
+    printf("|            >>> Сравнение дробей <<<            |\n");
+    printf("|------------------------------------------------|\n");
     
     double fraction1, fraction2;
     int denominator1,nominator1; // знаменатель и числитель для 1 дроби
@@ -20,17 +20,17 @@ void Comparing_fractions()
         fraction2=(nominator2*1.0/denominator2);
         if (fraction1>fraction2)
         {
-            printf("| Ответ: | %d / %d > %d / %d |\n",nominator1,denominator1,nominator2,denominator2);
+            printf("| Ответ: %d / %d > %d / %d \n",nominator1,denominator1,nominator2,denominator2);
             printf("\n");
         }
         if(fraction1<fraction2)
         {
-            printf("| Ответ: | %d / %d < %d / %d |\n",nominator1,denominator1,nominator2,denominator2);
+            printf("| Ответ: %d / %d < %d / %d \n",nominator1,denominator1,nominator2,denominator2);
             printf("\n");
         }
         if(fraction1==fraction2)
         {
-            printf("| Ответ: | %d / %d = %d / %d |\n",nominator1,denominator1,nominator2,denominator2);
+            printf("| Ответ: %d / %d = %d / %d \n",nominator1,denominator1,nominator2,denominator2);
             printf("\n");
         }
     }
@@ -41,9 +41,9 @@ void Comparing_fractions()
 ////////////////////////////////
 void Call_reduction_func()
 {
-    printf("|----------------------------------------------|\n");
-    printf("|           >>> Сокращение дроби <<<           |\n");
-    printf("|----------------------------------------------|\n");
+    printf("|------------------------------------------------|\n");
+    printf("|            >>> Сокращение дроби <<<            |\n");
+    printf("|------------------------------------------------|\n");
     
     int denominator1,nominator1; // знаменатель и числитель для 1 дроби
     printf("Введите числитель и знаменатель сокращаемой дроби: \n");scanf_s("%d %d",&nominator1,&denominator1);
@@ -54,30 +54,30 @@ void Call_reduction_func()
         if(denominator1==nominator1)
         {
             flag=1;
-            printf("| Ответ: | %d / %d = %d |\n",nominator1,denominator1,1);
+            printf("| Ответ: %d / %d = %d \n",nominator1,denominator1,1);
             printf("\n");
         }
         if((denominator1==(-1*nominator1) || nominator1==(-1*denominator1)))
         {
             flag=2;
-            printf("| Ответ: | %d / %d = %d |",nominator1,denominator1,-1);
+            printf("| Ответ: %d / %d = %d \n",nominator1,denominator1,-1);
             printf("\n");
         }
         if(nominator1==0)
         {
             flag=3;
-            printf("| Ответ: | %d / %d = %d |\n",nominator1,denominator1,0);
+            printf("| Ответ: %d / %d = %d \n",nominator1,denominator1,0);
             printf("\n");
         }
         if(denominator1<0 && nominator1<0 && flag==4)
         {
             flag=5;
-            printf("| Ответ: | %d / %d = %d / %d |\n",nominator1,denominator1,-1*result[0],-1*result[1]);
+            printf("| Ответ: %d / %d = %d / %d \n",nominator1,denominator1,-1*result[0],-1*result[1]);
             printf("\n");
         }
         if(flag==4)
         {
-            printf("| Ответ: | %d / %d = %d / %d |\n",nominator1,denominator1,result[0],result[1]);
+            printf("| Ответ: %d / %d = %d / %d \n",nominator1,denominator1,result[0],result[1]);
             printf("\n");
         }
     }
@@ -88,9 +88,9 @@ void Call_reduction_func()
 ////////////////////////////////
 void Fraction_to_the_decimal_system()
 {
-    printf("|----------------------------------------------|\n");
-    printf("|       >>> Дробь в десятичное число <<<       |\n");
-    printf("|----------------------------------------------|\n");
+    printf("|------------------------------------------------|\n");
+    printf("|        >>> Дробь в десятичное число <<<        |\n");
+    printf("|------------------------------------------------|\n");
     
     double decimal=0;
     int denominator1,nominator1; // знаменатель и числитель для 1 дроби
@@ -100,10 +100,10 @@ void Fraction_to_the_decimal_system()
         if(denominator1!=nominator1)
         {
             decimal += (float) nominator1 / (float) denominator1;
-            printf("| Ответ: | %d / %d = %lf |\n",nominator1,denominator1,decimal);
+            printf("| Ответ: %d / %d = %lf \n",nominator1,denominator1,decimal);
             printf("\n");
         }
-        else{printf("| Ответ: | %d / %d = 1 |\n",nominator1,denominator1);
+        else{printf("| Ответ: %d / %d = 1 \n",nominator1,denominator1);
             printf("\n");}
     }
     else{printf("Ошибка деления на ноль!\n");}
