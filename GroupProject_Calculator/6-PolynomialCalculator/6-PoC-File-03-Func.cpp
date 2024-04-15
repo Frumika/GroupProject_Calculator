@@ -5,7 +5,7 @@ Poly* UmnPolinomNaChislo(Poly* pol1) {
     double chislo;
     cout << "Введите число, на которое хотите умножить полином\n"; cin >> chislo;
     for (Item& p1 : *pol1) {
-        Item itm = make_pair(p1.second, p1.first * chislo);
+        Item itm = make_pair( p1.first * chislo,p1.second);
         if (itm.first != 0)
             pol->emplace_back(itm);
     }
