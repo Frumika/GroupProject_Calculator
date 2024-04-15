@@ -1,7 +1,7 @@
 #pragma once
 
 
-
+void runFractionCalculator(); // функция вызова меню калькулятора дробей
 int *Fraction_reduction(int &uppernum, int &undernum); // функция сокращения дробей
 
 void Adding_fractions(); // функция сложения дробей
