@@ -124,7 +124,7 @@ void runPlacementWithoutRep()
         system("cls");
     }
     while (n < 1 || n > 100 || m < 1 || n < m);
-    cout << "Кол-во размещений без повторений из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << factorial(n)/factorial(n-m) << endl << endl;
+    cout << "Кол-во размещений без повторений из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << round(factorial(n)/factorial(n-m)) << endl << endl;
 
     cout << "Нажмите любую клавишу чтобы продолжить...";    //
     _getch();                                               //Не даёт сразу выйти в меню

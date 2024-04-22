@@ -60,7 +60,7 @@ void runCombinationWithRep()
         system("cls");
     }
     while (n < 1 || n > 100 || m < 1 || n < m);
-    cout << "Кол-во сочетаний с повторениями из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << factorial(m+n-1)/(factorial(m-1)*factorial(n)) << endl << endl;
+    cout << "Кол-во сочетаний с повторениями из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << round(factorial(m+n-1)/(factorial(n-1)*factorial(m))) << endl << endl;
 
     cout << "Нажмите любую клавишу чтобы продолжить...";    //
     _getch();                                               //Не даёт сразу выйти в меню
@@ -122,7 +122,7 @@ void runCombinationWithoutRep()
         system("cls");
     }
     while (n < 1 || n > 100 || m < 1 || n < m);
-    cout << "Кол-во сочетаний без повторений из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << factorial(n)/(factorial(m)*factorial(n-m)) << endl << endl;
+    cout << "Кол-во сочетаний без повторений из " << n << " по " << m << " = " << setprecision(numeric_limits<double>::max_digits10) << round(factorial(n)/(factorial(m)*factorial(n-m))) << endl << endl;
 
     cout << "Нажмите любую клавишу чтобы продолжить...";    //
     _getch();                                               //Не даёт сразу выйти в меню

@@ -20,7 +20,11 @@ void enterArray(double **x, int arraySize)
             cin >> x[0][column] >> probability;
             x[1][column] = probability;
             probabilitySum += probability;
-            if(probabilitySum > 1) break;
+            if(probabilitySum > 1 || probability < 0)
+            {
+                probabilitySum = 0;
+                break;
+            }
         }
         if(probabilitySum != 1)
         {
