@@ -46,13 +46,19 @@ Poly* DivPolynom(Poly* pol1, Poly* pol2, Poly** rem) {
             cf1[i + j] -= cf2[j] * c;
     }
     // Размещаем коэффициенты остатка в полиноме
-    double eps = numeric_limits<double>::epsilon();
+    /*double eps = numeric_limits<double>::epsilon();
     for (unsigned i = 1; i < cf1.size(); ++i) {
         if (abs(cf1[i]) > eps)
             (*rem)->emplace_back(make_pair( cf1[i],pwr1 - i));
     }
     NormPolynom(pol);
-    NormPolynom(*rem);
+    NormPolynom(*rem);*/
+    Poly *ost= new Poly;
+    NormPolynom(pol);
+    ost=SubtPolynom(pol1,MultPolynom(pol,pol2));
+    NormPolynom(ost);
+    cout<<"Остаток от делния равен";
+    PrintPolynom(ost);
     return pol;
 }// деление полиномов
 

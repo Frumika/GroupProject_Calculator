@@ -5,39 +5,6 @@ vector<double> AllCoef(const Poly* pol, double pwr) {
         coef[pwr - itm.second] = itm.first;
     return coef;
 }
-Poly* GetPolynom(istream& in) {
-    Poly* pol = new Poly;
-    string line, str1;
-    double pwr; double cft;
-    getline(in, line);//, '\n');
-    istringstream elm1(line);
-    while (getline(elm1, str1, ';')) {
-        istringstream elm2(str1);
-        elm2 >> cft;
-        elm2 >> pwr;
-        pol->emplace_back(make_pair(cft,pwr));
-    }
-    return pol;
-}
-void PrintPolynom(Poly* pol) {
-    if (pol->size() == 0) {
-        cout << 0 << "\n";
-        return;
-    }
-    bool firstTime = true;
-    for (Item& p : *pol) {
-        if (!firstTime && p.first>0)
-            cout << "+";
-        if (p.first!=0)
-        {
-            if (p.second==0){ cout << p.first;}
-            else{cout << p.first << "*x^" << p.second;}
-        }
-        firstTime = false;
-    }
-    cout << "\n";
-}
-
 void NormPolynom(Poly* pol) {
     if (pol->size() == 0)
         return;
@@ -76,3 +43,36 @@ void NormPolynom(Poly* pol) {
         bgn = begin(*pol);
     }
 }//нормирование полинома(степени х по убыванию)
+Poly* GetPolynom(istream& in) {
+    Poly* pol = new Poly;
+    string line, str1;
+    double pwr; double cft;
+        getline(in, line);//, '\n');
+        istringstream elm1(line);
+        while (getline(elm1, str1, ';')) {
+            istringstream elm2(str1);
+            elm2 >> cft;
+            elm2 >> pwr;
+            pol->emplace_back(make_pair(cft,pwr));
+        }
+    
+    return pol;
+}
+void PrintPolynom(Poly* pol) {
+    if (pol->size() == 0) {
+        cout << 0 << "\n";
+        return;
+    }
+    bool firstTime = true;
+    for (Item& p : *pol) {
+        if (!firstTime && p.first>0)
+            cout << "+";
+        if (p.first!=0)
+        {
+            if (p.second==0){ cout << p.first;}
+            else{cout << p.first << "*x^" << p.second;}
+        }
+        firstTime = false;
+    }
+    cout << "\n";
+}
