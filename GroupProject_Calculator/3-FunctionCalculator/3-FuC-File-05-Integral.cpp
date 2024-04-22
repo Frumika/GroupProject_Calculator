@@ -39,7 +39,7 @@ void runDefIntegral(function<double (double)> ChosenFunc)
     do
     {
         i++;
-        diff = fabs(IntegralCalc(st, en, k * i, ChosenFunc) - IntegralCalc(st, en, k * (i + 1), ChosenFunc));
+        diff = abs(IntegralCalc(st, en, k * i, ChosenFunc) - IntegralCalc(st, en, k * (i + 1), ChosenFunc));
     } while (diff > e);
 
     cout << "| Значение интеграла: " <<IntegralCalc(st, en, k * (i + 1), ChosenFunc);

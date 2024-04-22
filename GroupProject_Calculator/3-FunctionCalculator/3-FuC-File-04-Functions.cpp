@@ -5,7 +5,7 @@ double PolynomFunc(double x, double arr[], int n)
     double res = 0;
 
     for (int i = 0; i < n; i++)
-        res += arr[i] * pow(x, arr[i]);
+        res += arr[i] * pow(x, i);
 
     return res;
 }

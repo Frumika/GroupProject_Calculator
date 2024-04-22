@@ -15,7 +15,7 @@ using namespace std;
 
 #define WIDTH 800 
 #define HEIGHT 600
-#define MAX_FONT_SIZE 20
+#define MAX_FONT_SIZE 16
 
 extern bool wasMade;
 extern double root;
@@ -46,4 +46,3 @@ void renderGraph(SDL_Renderer *renderer, function<double(double)> ChosenFunc, TT
 void DrawFunc(function<double (double)> ChosenFunc);
 int calculateFontSize(double scaleX);
 void drawLine(SDL_Renderer *renderer, int x1, int y1, int x2, int y2);
-void plot(SDL_Renderer *renderer, int x, int y);

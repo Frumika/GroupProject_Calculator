@@ -176,15 +176,13 @@ void runFunctionCalculator()
                     << "|------------------------------------------------|" << endl
                     << "|             a * sin(b * x + c) + d             |" << endl
                     << "|------------------------------------------------|" << endl;
-                    
+
+                    do
+                    {
                     cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
-
-                    goodFunc = 1;
-
-                    if ((-d/a <= 1 && -d/a >= -1))                    
-                        root = (asin(-d/a) - c) / b;
-                    else wasMade = false;
-                    
+                    }
+                    while (a == 0 || b == 0);
+                
                     auto ChosenFunc = [&a, &b, &c, &d](double x)
                     {
                         return SinFunc(x, a, b, c, d);
@@ -203,14 +201,12 @@ void runFunctionCalculator()
                     << "|------------------------------------------------|" << endl
                     << "|               a * cos(b * x + c) + d           |" << endl
                     << "|------------------------------------------------|" << endl;
-                    
-                    cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
 
-                    goodFunc = true;
-                    
-                    if ((-d/a <= 1 && -d/a >= -1))                    
-                        root = (acos(-d/a) - c) / b;
-                    else wasMade = false;
+                    do
+                    {
+                        cout << "| Введите значения a, b, c, d: "; cin >> a >> b >> c >> d;
+                    }
+                    while (a == 0 || b == 0);
                     
                     auto ChosenFunc = [&a, &b, &c, &d](double x)
                     {
